@@ -1406,10 +1406,17 @@
         }
 
         @media (max-width: 768px) {
-            nav { padding: 16px 24px; }
-            nav.scrolled { padding: 14px 24px; }
+            /* ── NAV ── */
+            nav { padding: 14px 20px; }
+            nav.scrolled { padding: 12px 20px; }
             .nav-links { display: none; }
+            .nav-cta { display: none; }
             .menu-toggle { display: flex; }
+
+            .nav-logo img { height: 32px; }
+            .nav-logo-text { font-size: 0.95rem; letter-spacing: 1px; }
+            .nav-logo-text span { font-size: 0.5rem; letter-spacing: 2px; }
+            nav.scrolled .nav-logo img { height: 28px; }
 
             .nav-links.open {
                 display: flex;
@@ -1426,28 +1433,154 @@
 
             .nav-links.open a { font-size: 1.1rem; letter-spacing: 3px; }
 
-            section { padding: 80px 24px; }
-            .hero-content { padding: 0 24px; }
-            .hero-scroll { left: 24px; }
+            /* ── HERO ── */
+            .hero { min-height: 100vh; height: auto; }
+            .hero-content { padding: 0 20px; max-width: 100%; }
+            .hero h1 { font-size: 2.4rem; letter-spacing: 0; line-height: 1.1; }
+            .hero h1 br { display: none; }
+            .hero-badge { font-size: 0.55rem; letter-spacing: 3px; padding: 6px 14px; margin-bottom: 24px; }
+            .hero-sub { font-size: 0.88rem; line-height: 1.7; margin-bottom: 36px; max-width: 100%; }
+            .hero-actions { flex-direction: column; gap: 12px; width: 100%; }
+            .hero-actions .btn-primary,
+            .hero-actions .btn-outline { width: 100%; text-align: center; padding: 16px 20px; font-size: 0.7rem; }
+            .hero-strip { display: none; }
+            .hero-scroll { left: 20px; bottom: 24px; }
+            .hero-overlay {
+                background:
+                    linear-gradient(180deg, rgba(8,8,8,0.6) 0%, rgba(8,8,8,0.4) 30%, rgba(8,8,8,0.9) 100%),
+                    linear-gradient(90deg, rgba(8,8,8,0.85) 0%, transparent 70%);
+            }
+
+            /* ── SECTIONS ── */
+            section { padding: 64px 20px; }
+            .section-label { font-size: 0.6rem; letter-spacing: 4px; margin-bottom: 14px; }
+            .section-title { font-size: 1.8rem; margin-bottom: 14px; }
+            .section-desc { font-size: 0.88rem; line-height: 1.75; }
+            .gold-divider { margin: 20px 0; }
+
+            /* ── STATS ── */
             .stats-bar { grid-template-columns: repeat(2, 1fr); }
-            .about-images { height: 400px; }
-            .about-img-main { width: 75%; height: 65%; }
-            .about-img-secondary { width: 60%; height: 50%; }
+            .stat { padding: 32px 16px; }
+            .stat-number { font-size: 2.2rem; }
+            .stat-label { font-size: 0.55rem; letter-spacing: 2px; }
+            .stat:not(:last-child)::after { display: none; }
+
+            /* ── ABOUT ── */
+            .about-section { grid-template-columns: 1fr; gap: 40px; }
+            .about-images { height: 320px; }
+            .about-img-main { width: 65%; height: 70%; }
+            .about-img-secondary { width: 55%; height: 50%; }
+            .about-img-accent { width: 70px; height: 70px; padding: 8px; }
+            .about-text .section-title br { display: none; }
+            .highlight-features li { font-size: 0.82rem; padding: 12px 0; }
+            .highlight-features li .feat-icon { width: 36px; height: 36px; font-size: 0.9rem; }
+
+            /* ── GALLERY ── */
+            .gallery-section { padding: 64px 0; }
+            .gallery-header { padding: 0 20px; margin-bottom: 40px; }
+            .gallery-grid { grid-template-columns: 1fr 1fr; padding: 0 10px; gap: 6px; grid-template-rows: auto; }
+            .gallery-item { height: 160px; }
+            .gallery-item:nth-child(1),
+            .gallery-item:nth-child(2),
+            .gallery-item:nth-child(3),
+            .gallery-item:nth-child(4),
+            .gallery-item:nth-child(5),
+            .gallery-item:nth-child(6),
+            .gallery-item:nth-child(7),
+            .gallery-item:nth-child(8) { grid-column: auto; }
+            .gallery-label { font-size: 0.55rem; bottom: 10px; left: 12px; }
+
+            /* ── HIGHLIGHT (ELEVATOR) ── */
+            .highlight-section { grid-template-columns: 1fr; }
+            .highlight-image { height: 280px; }
+            .highlight-text { padding: 48px 20px; }
+            .highlight-text .section-title { font-size: 1.6rem; }
+            .highlight-text .section-title br { display: none; }
+
+            /* ── AMENITIES ── */
+            .amenities-section { padding: 64px 0; }
+            .amenities-header { margin-bottom: 40px; padding: 0 20px; }
             .amenities-grid { grid-template-columns: 1fr 1fr; }
-            .rooms-grid { grid-template-columns: 1fr; }
-            .testimonial-grid { grid-template-columns: 1fr; }
+            .amenity { padding: 32px 16px; }
+            .amenity-icon { font-size: 1.3rem; margin-bottom: 14px; }
+            .amenity h4 { font-size: 0.88rem; }
+            .amenity p { font-size: 0.7rem; }
+
+            /* ── ROOMS ── */
+            .rooms-section { padding: 64px 20px; }
+            .rooms-header { margin-bottom: 40px; }
+            .rooms-grid { grid-template-columns: 1fr; gap: 24px; }
+            .room-visual { height: 200px; }
+            .room-details { padding: 28px 24px; }
+            .room-type { font-size: 1.4rem; }
+            .room-price .amount { font-size: 2.4rem; }
+            .room-features li { font-size: 0.8rem; padding: 7px 0; }
+            .room-cta { padding: 14px; font-size: 0.65rem; }
+            .room-badge { font-size: 0.5rem; top: 12px; right: 12px; }
+            .deposit-info { padding: 24px 20px; margin-top: 32px; }
+            .deposit-info p { font-size: 0.78rem; }
+
+            /* ── LOCATION ── */
+            .location-grid { grid-template-columns: 1fr; gap: 32px; }
+            .location-map { height: 280px; }
+            .map-overlay-btn { padding: 10px 18px; font-size: 0.6rem; bottom: 12px; right: 12px; }
+            .highlight-list li { font-size: 0.82rem; padding: 12px 0; }
+            .highlight-list li .hl-icon { width: 36px; height: 36px; font-size: 0.9rem; }
+
+            /* ── TESTIMONIALS ── */
+            .testimonial-grid { grid-template-columns: 1fr; gap: 16px; }
+            .testimonial { padding: 32px 24px; }
+            .testimonial p { font-size: 0.92rem; }
+            .testimonial::before { font-size: 3.5rem; top: 10px; right: 16px; }
+
+            /* ── FAQ ── */
+            .faq-grid { grid-template-columns: 1fr; gap: 10px; }
+            .faq-question { padding: 20px 20px; font-size: 0.82rem; }
+            .faq-answer-inner { padding: 0 20px 20px; font-size: 0.78rem; }
+
+            /* ── CTA ── */
+            .cta-section { padding: 80px 20px; }
+            .cta-content .section-title { font-size: 1.8rem; }
+            .cta-actions { flex-direction: column; width: 100%; }
+            .cta-actions .btn-primary,
+            .cta-actions .btn-outline { width: 100%; text-align: center; padding: 16px 20px; }
+            .cta-phone { font-size: 1.4rem; letter-spacing: 1px; }
+
+            /* ── FOOTER ── */
+            footer { padding: 48px 20px 24px; }
             .footer-top { grid-template-columns: 1fr; gap: 32px; }
-            .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
-            footer { padding: 48px 24px 24px; }
+            .footer-brand p { max-width: 100%; }
+            .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
+
+            /* ── UTILITIES ── */
             .cursor-glow { display: none; }
-            .gallery-grid { grid-template-columns: 1fr; padding: 0 24px; gap: 6px; }
-            .gallery-item { height: 200px; }
-            .gallery-header { padding: 0 24px; }
-            .gallery-section { padding: 80px 0; }
-            .highlight-text { padding: 48px 24px; }
-            .whatsapp-fab { bottom: 20px; right: 20px; width: 52px; height: 52px; }
-            .whatsapp-fab svg { width: 26px; height: 26px; }
-            .faq-grid { grid-template-columns: 1fr; }
+            .whatsapp-fab { bottom: 16px; right: 16px; width: 50px; height: 50px; }
+            .whatsapp-fab svg { width: 24px; height: 24px; }
+            .back-to-top { bottom: 16px; left: 16px; width: 38px; height: 38px; font-size: 1rem; }
+            .loader-logo { width: 140px; }
+            .loader-bar { width: 160px; }
+
+            /* ── LIGHTBOX ── */
+            .lightbox img { max-width: 95%; max-height: 75vh; }
+            .lightbox-close { top: 16px; right: 16px; width: 36px; height: 36px; font-size: 1.1rem; }
+            .lightbox-nav { width: 40px; height: 40px; font-size: 1.5rem; }
+            .lightbox-prev { left: 10px; }
+            .lightbox-next { right: 10px; }
+        }
+
+        /* ═══ SMALL PHONES (< 400px) ═══ */
+        @media (max-width: 400px) {
+            .hero h1 { font-size: 2rem; }
+            .hero-sub { font-size: 0.82rem; }
+            .hero-badge { font-size: 0.5rem; letter-spacing: 2px; }
+            .section-title { font-size: 1.5rem; }
+            .stat-number { font-size: 1.8rem; }
+            .stat { padding: 24px 12px; }
+            .room-price .amount { font-size: 2rem; }
+            .amenities-grid { grid-template-columns: 1fr; }
+            .gallery-item { height: 140px; }
+            .nav-logo-text { font-size: 0.8rem; }
+            .nav-logo img { height: 28px; }
         }
 
         /* ═══ LOADING SCREEN ═══ */
