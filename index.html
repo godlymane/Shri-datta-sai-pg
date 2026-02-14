@@ -1,0 +1,2312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shri Datta Sai PG | Premium Living in Hinjawadi, Pune</title>
+    <meta name="description" content="Premium Girls & Boys PG accommodation in Hinjawadi, Pune. Single & Double sharing rooms with homely food, WiFi, 24/7 security, elevator, and modern amenities.">
+    <meta property="og:title" content="Shri Datta Sai PG | Premium Living in Hinjawadi">
+    <meta property="og:description" content="Premium Girls & Boys PG with elevator, homely food, WiFi, CCTV & modern amenities. Single ₹14K | Double ₹8K/month.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_IN">
+    <meta name="theme-color" content="#c9a84c">
+    <meta property="og:image" content="photos/logo.jpg">
+    <link rel="icon" type="image/jpeg" href="photos/logo.jpg">
+    <link rel="apple-touch-icon" href="photos/logo.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --gold: #c9a84c;
+            --gold-light: #e8d48b;
+            --gold-dark: #a07c2a;
+            --gold-glow: rgba(201,168,76,0.15);
+            --dark: #080808;
+            --dark-2: #0e0e0e;
+            --dark-3: #151515;
+            --dark-4: #1c1c1c;
+            --dark-5: #232323;
+            --text: #f0ece4;
+            --text-dim: #a09888;
+            --text-muted: #5c5647;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--dark);
+            color: var(--text);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* ═══ CURSOR GLOW ═══ */
+        .cursor-glow {
+            position: fixed;
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(201,168,76,0.05) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 9999;
+            transform: translate(-50%, -50%);
+        }
+
+        /* ═══ FILM GRAIN ═══ */
+        .grain {
+            position: fixed;
+            inset: 0;
+            z-index: 9998;
+            pointer-events: none;
+            opacity: 0.025;
+        }
+
+        /* ═══ SCROLLBAR ═══ */
+        ::-webkit-scrollbar { width: 5px; }
+        ::-webkit-scrollbar-track { background: var(--dark); }
+        ::-webkit-scrollbar-thumb { background: var(--gold-dark); border-radius: 3px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--gold); }
+
+        /* ═══ SELECTION ═══ */
+        ::selection { background: rgba(201,168,76,0.3); color: var(--text); }
+
+        /* ═══ NAV ═══ */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 24px 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        nav.scrolled {
+            padding: 16px 60px;
+            background: rgba(8,8,8,0.92);
+            backdrop-filter: blur(24px) saturate(1.2);
+            border-bottom: 1px solid rgba(201,168,76,0.08);
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .nav-logo img {
+            height: 40px;
+            width: auto;
+        }
+
+        .nav-logo-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: var(--gold);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            line-height: 1.1;
+        }
+
+        .nav-logo-text span {
+            display: block;
+            font-size: 0.55rem;
+            color: var(--text-muted);
+            letter-spacing: 3px;
+            font-weight: 300;
+            margin-top: 2px;
+        }
+
+        nav.scrolled .nav-logo img { height: 34px; }
+
+        .nav-links { display: flex; gap: 40px; list-style: none; }
+
+        .nav-links a {
+            color: var(--text-dim);
+            text-decoration: none;
+            font-size: 0.72rem;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: linear-gradient(90deg, var(--gold), transparent);
+            transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .nav-links a:hover { color: var(--gold-light); }
+        .nav-links a:hover::after { width: 100%; }
+
+        .nav-cta {
+            background: transparent;
+            border: 1px solid rgba(201,168,76,0.4);
+            color: var(--gold);
+            padding: 12px 32px;
+            font-size: 0.7rem;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.4s;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .nav-cta:hover {
+            background: var(--gold);
+            color: var(--dark);
+            border-color: var(--gold);
+            box-shadow: 0 0 30px rgba(201,168,76,0.15);
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            z-index: 1001;
+        }
+        .menu-toggle span {
+            width: 24px;
+            height: 1.5px;
+            background: var(--gold);
+            transition: all 0.3s;
+        }
+
+        /* ═══ HERO ═══ */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+
+        .hero-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            opacity: 0.45;
+            filter: brightness(0.7) contrast(1.1);
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(180deg, rgba(8,8,8,0.5) 0%, rgba(8,8,8,0.3) 40%, rgba(8,8,8,0.85) 100%),
+                linear-gradient(90deg, rgba(8,8,8,0.8) 0%, transparent 50%);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            padding: 0 80px;
+            max-width: 750px;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            border: 1px solid rgba(201,168,76,0.2);
+            padding: 8px 20px;
+            font-size: 0.65rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 36px;
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+
+        .hero-badge::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            background: var(--gold);
+            border-radius: 50%;
+            animation: pulse-dot 2s ease infinite;
+        }
+
+        @keyframes pulse-dot {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+
+        .hero h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(3rem, 6vw, 5.5rem);
+            font-weight: 300;
+            line-height: 1.05;
+            margin-bottom: 28px;
+            animation: fadeInUp 1s ease 0.4s both;
+            letter-spacing: -1px;
+        }
+
+        .hero h1 em {
+            font-style: italic;
+            color: var(--gold);
+            font-weight: 400;
+        }
+
+        .hero-sub {
+            font-size: 1rem;
+            color: var(--text-dim);
+            font-weight: 300;
+            margin-bottom: 48px;
+            max-width: 460px;
+            line-height: 1.9;
+            animation: fadeInUp 1s ease 0.6s both;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 16px;
+            animation: fadeInUp 1s ease 0.8s both;
+        }
+
+        .btn-primary {
+            background: var(--gold);
+            color: var(--dark);
+            border: none;
+            padding: 16px 44px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.4s;
+            font-family: 'Inter', sans-serif;
+            text-decoration: none;
+        }
+
+        .btn-primary:hover {
+            background: var(--gold-light);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 40px rgba(201,168,76,0.2);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--text);
+            border: 1px solid rgba(255,255,255,0.15);
+            padding: 16px 44px;
+            font-size: 0.75rem;
+            font-weight: 400;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.4s;
+            font-family: 'Inter', sans-serif;
+            text-decoration: none;
+        }
+
+        .btn-outline:hover {
+            border-color: var(--gold);
+            color: var(--gold);
+        }
+
+        /* Hero side image strip */
+        .hero-strip {
+            position: absolute;
+            right: 60px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            animation: fadeInUp 1s ease 1s both;
+        }
+
+        .hero-strip-img {
+            width: 120px;
+            height: 90px;
+            overflow: hidden;
+            border: 1px solid rgba(201,168,76,0.15);
+            opacity: 0.6;
+            transition: all 0.4s;
+            cursor: pointer;
+        }
+
+        .hero-strip-img:hover {
+            opacity: 1;
+            border-color: var(--gold);
+        }
+
+        .hero-strip-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s;
+        }
+
+        .hero-strip-img:hover img { transform: scale(1.1); }
+
+        .hero-scroll {
+            position: absolute;
+            bottom: 40px;
+            left: 80px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--text-muted);
+            font-size: 0.6rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            z-index: 2;
+            animation: fadeInUp 1s ease 1.2s both;
+        }
+
+        .scroll-line {
+            width: 50px;
+            height: 1px;
+            background: linear-gradient(90deg, var(--gold), transparent);
+            animation: scroll-pulse 2s ease infinite;
+        }
+
+        @keyframes scroll-pulse {
+            0%, 100% { opacity: 0.3; transform: scaleX(0.5); transform-origin: left; }
+            50% { opacity: 1; transform: scaleX(1); }
+        }
+
+        /* ═══ SECTION COMMON ═══ */
+        section { padding: 140px 80px; position: relative; }
+
+        .section-label {
+            font-size: 0.65rem;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .section-label::before {
+            content: '';
+            width: 30px;
+            height: 1px;
+            background: var(--gold);
+        }
+
+        .section-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2.2rem, 4vw, 3.5rem);
+            font-weight: 300;
+            margin-bottom: 20px;
+            line-height: 1.15;
+            letter-spacing: -0.5px;
+        }
+
+        .section-desc {
+            color: var(--text-dim);
+            font-size: 0.95rem;
+            font-weight: 300;
+            max-width: 520px;
+            line-height: 1.9;
+        }
+
+        .gold-divider {
+            width: 50px;
+            height: 1px;
+            background: linear-gradient(90deg, var(--gold), transparent);
+            margin: 28px 0;
+        }
+
+        /* ═══ STATS BAR ═══ */
+        .stats-bar {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            border-top: 1px solid rgba(201,168,76,0.1);
+            border-bottom: 1px solid rgba(201,168,76,0.1);
+        }
+
+        .stat {
+            padding: 56px 40px;
+            text-align: center;
+            position: relative;
+        }
+
+        .stat:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 30%;
+            height: 40%;
+            width: 1px;
+            background: rgba(201,168,76,0.1);
+        }
+
+        .stat-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3.2rem;
+            color: var(--gold);
+            font-weight: 300;
+            line-height: 1;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 0.65rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--text-muted);
+        }
+
+        /* ═══ ABOUT ═══ */
+        .about-section {
+            display: grid;
+            grid-template-columns: 1.1fr 1fr;
+            gap: 100px;
+            align-items: center;
+        }
+
+        .about-images {
+            position: relative;
+            height: 550px;
+        }
+
+        .about-img-main {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 70%;
+            height: 75%;
+            overflow: hidden;
+            border: 1px solid rgba(201,168,76,0.1);
+        }
+
+        .about-img-main img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s;
+        }
+
+        .about-img-main:hover img { transform: scale(1.05); }
+
+        .about-img-secondary {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 55%;
+            height: 55%;
+            overflow: hidden;
+            border: 1px solid rgba(201,168,76,0.15);
+        }
+
+        .about-img-secondary img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s;
+        }
+
+        .about-img-secondary:hover img { transform: scale(1.05); }
+
+        .about-img-accent {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100px;
+            height: 100px;
+            background: var(--dark);
+            border: 1px solid var(--gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 3;
+            padding: 12px;
+        }
+
+        .about-img-accent img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        /* ═══ PHOTO GALLERY ═══ */
+        .gallery-section {
+            background: var(--dark-2);
+            padding: 140px 0;
+        }
+
+        .gallery-header {
+            text-align: center;
+            margin-bottom: 60px;
+            padding: 0 80px;
+        }
+
+        .gallery-header .section-label {
+            justify-content: center;
+        }
+
+        .gallery-header .section-label::before { display: none; }
+        .gallery-header .section-label::after {
+            content: '';
+            width: 30px;
+            height: 1px;
+            background: var(--gold);
+        }
+
+        .gallery-header .section-desc {
+            margin: 0 auto;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            grid-template-rows: 280px 280px 280px;
+            gap: 4px;
+            padding: 0 4px;
+        }
+
+        .gallery-item {
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .gallery-item:nth-child(1) { grid-column: 1 / 5; }
+        .gallery-item:nth-child(2) { grid-column: 5 / 8; }
+        .gallery-item:nth-child(3) { grid-column: 8 / 13; }
+        .gallery-item:nth-child(4) { grid-column: 1 / 4; }
+        .gallery-item:nth-child(5) { grid-column: 4 / 7; }
+        .gallery-item:nth-child(6) { grid-column: 7 / 10; }
+        .gallery-item:nth-child(7) { grid-column: 10 / 13; }
+        .gallery-item:nth-child(8) { grid-column: 1 / 5; }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1), filter 0.4s;
+            filter: brightness(0.8) saturate(0.9);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.08);
+            filter: brightness(1) saturate(1.1);
+        }
+
+        .gallery-item::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, transparent 60%, rgba(8,8,8,0.6) 100%);
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+
+        .gallery-item:hover::after { opacity: 1; }
+
+        .gallery-item .gallery-label {
+            position: absolute;
+            bottom: 16px;
+            left: 20px;
+            z-index: 2;
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--gold-light);
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.4s;
+        }
+
+        .gallery-item:hover .gallery-label {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ═══ AMENITIES ═══ */
+        .amenities-section { background: var(--dark); }
+
+        .amenities-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .amenities-header .section-label {
+            justify-content: center;
+        }
+
+        .amenities-header .section-label::before { display: none; }
+
+        .amenities-header .section-desc {
+            margin: 0 auto;
+        }
+
+        .amenities-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1px;
+            background: rgba(201,168,76,0.05);
+        }
+
+        .amenity {
+            background: var(--dark);
+            padding: 52px 36px;
+            text-align: center;
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+        }
+
+        .amenity::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+            transition: width 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .amenity:hover { background: var(--dark-3); }
+        .amenity:hover::before { width: 80%; }
+
+        .amenity-icon {
+            font-size: 1.6rem;
+            margin-bottom: 20px;
+            display: block;
+            transition: transform 0.3s;
+        }
+
+        .amenity:hover .amenity-icon { transform: scale(1.15); }
+
+        .amenity h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.05rem;
+            margin-bottom: 8px;
+            color: var(--text);
+            font-weight: 400;
+            letter-spacing: 0.5px;
+        }
+
+        .amenity p {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* ═══ ROOMS / PRICING ═══ */
+        .rooms-section {
+            background: var(--dark-2);
+        }
+
+        .rooms-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .rooms-header .section-label {
+            justify-content: center;
+        }
+
+        .rooms-header .section-label::before { display: none; }
+
+        .rooms-header .section-desc {
+            margin: 0 auto;
+        }
+
+        .rooms-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 32px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .room-card {
+            background: var(--dark);
+            border: 1px solid rgba(201,168,76,0.08);
+            overflow: hidden;
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+        }
+
+        .room-card:hover {
+            border-color: rgba(201,168,76,0.25);
+            transform: translateY(-6px);
+            box-shadow: 0 24px 64px rgba(0,0,0,0.5);
+        }
+
+        .room-card.featured { border-color: rgba(201,168,76,0.3); }
+
+        .room-badge {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: var(--gold);
+            color: var(--dark);
+            font-size: 0.55rem;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            padding: 5px 14px;
+            font-weight: 600;
+            z-index: 3;
+        }
+
+        .room-visual {
+            height: 240px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .room-visual img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            filter: brightness(0.85);
+        }
+
+        .room-card:hover .room-visual img {
+            transform: scale(1.06);
+            filter: brightness(0.95);
+        }
+
+        .room-visual::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, transparent 50%, rgba(8,8,8,0.7) 100%);
+        }
+
+        .room-details { padding: 40px; }
+
+        .room-type {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.6rem;
+            font-weight: 400;
+            margin-bottom: 4px;
+        }
+
+        .room-tagline {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            margin-bottom: 28px;
+        }
+
+        .room-price {
+            display: flex;
+            align-items: baseline;
+            gap: 4px;
+            margin-bottom: 28px;
+            padding-bottom: 28px;
+            border-bottom: 1px solid rgba(201,168,76,0.08);
+        }
+
+        .room-price .currency {
+            font-size: 1rem;
+            color: var(--gold);
+            font-weight: 500;
+        }
+
+        .room-price .amount {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3rem;
+            color: var(--gold);
+            font-weight: 400;
+            line-height: 1;
+        }
+
+        .room-price .period {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            margin-left: 4px;
+        }
+
+        .room-features {
+            list-style: none;
+            margin-bottom: 32px;
+        }
+
+        .room-features li {
+            padding: 9px 0;
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .room-features li::before {
+            content: '';
+            width: 4px;
+            height: 4px;
+            background: var(--gold);
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .room-cta {
+            display: block;
+            width: 100%;
+            text-align: center;
+            padding: 16px;
+            background: transparent;
+            border: 1px solid rgba(201,168,76,0.25);
+            color: var(--gold);
+            font-size: 0.7rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.4s;
+            font-family: 'Inter', sans-serif;
+            text-decoration: none;
+        }
+
+        .room-cta:hover {
+            background: var(--gold);
+            color: var(--dark);
+            border-color: var(--gold);
+        }
+
+        .room-card.featured .room-cta {
+            background: var(--gold);
+            color: var(--dark);
+            border-color: var(--gold);
+        }
+
+        .room-card.featured .room-cta:hover {
+            background: var(--gold-light);
+        }
+
+        .deposit-info {
+            text-align: center;
+            margin-top: 56px;
+            padding: 36px 48px;
+            border: 1px solid rgba(201,168,76,0.08);
+            background: var(--dark);
+            max-width: 650px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .deposit-info p {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            line-height: 1.9;
+        }
+
+        .deposit-info strong { color: var(--gold-light); font-weight: 500; }
+
+        /* ═══ PREMIUM HIGHLIGHT ═══ */
+        .highlight-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 500px;
+        }
+
+        .highlight-image {
+            overflow: hidden;
+            position: relative;
+        }
+
+        .highlight-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.8);
+            transition: all 0.6s;
+        }
+
+        .highlight-image:hover img {
+            filter: brightness(0.95);
+            transform: scale(1.03);
+        }
+
+        .highlight-text {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 80px;
+            background: var(--dark-3);
+        }
+
+        .highlight-text .section-title {
+            font-size: clamp(1.8rem, 3vw, 2.6rem);
+        }
+
+        .highlight-features {
+            list-style: none;
+            margin-top: 36px;
+        }
+
+        .highlight-features li {
+            padding: 14px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.04);
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            font-size: 0.9rem;
+            color: var(--text-dim);
+        }
+
+        .highlight-features li .feat-icon {
+            width: 44px;
+            height: 44px;
+            background: rgba(201,168,76,0.08);
+            border: 1px solid rgba(201,168,76,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            flex-shrink: 0;
+        }
+
+        /* ═══ LOCATION ═══ */
+        .location-section {
+            background: var(--dark);
+        }
+
+        .location-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .highlight-list {
+            list-style: none;
+            margin-top: 36px;
+        }
+
+        .highlight-list li {
+            padding: 16px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.04);
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            font-size: 0.88rem;
+            color: var(--text-dim);
+        }
+
+        .highlight-list li .hl-icon {
+            width: 44px;
+            height: 44px;
+            background: rgba(201,168,76,0.06);
+            border: 1px solid rgba(201,168,76,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+
+        .location-map {
+            height: 480px;
+            border: 1px solid rgba(201,168,76,0.1);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .location-map iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            filter: grayscale(0.85) brightness(0.6) contrast(1.2);
+            transition: filter 0.5s;
+        }
+
+        .location-map:hover iframe {
+            filter: grayscale(0.4) brightness(0.75) contrast(1.1);
+        }
+
+        .map-overlay-btn {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            background: var(--gold);
+            color: var(--dark);
+            padding: 12px 24px;
+            font-size: 0.65rem;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            text-decoration: none;
+            font-weight: 600;
+            z-index: 3;
+            font-family: 'Inter', sans-serif;
+            transition: all 0.3s;
+        }
+
+        .map-overlay-btn:hover {
+            background: var(--gold-light);
+            transform: translateY(-2px);
+        }
+
+        /* ═══ TESTIMONIALS ═══ */
+        .testimonials-section {
+            background: var(--dark-2);
+        }
+
+        .testimonials-header {
+            text-align: center;
+            margin-bottom: 64px;
+        }
+
+        .testimonials-header .section-label {
+            justify-content: center;
+        }
+
+        .testimonials-header .section-label::before { display: none; }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            max-width: 1050px;
+            margin: 0 auto;
+        }
+
+        .testimonial {
+            background: var(--dark);
+            border: 1px solid rgba(201,168,76,0.06);
+            padding: 44px 36px;
+            text-align: left;
+            transition: all 0.4s;
+            position: relative;
+        }
+
+        .testimonial::before {
+            content: '"';
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 5rem;
+            color: rgba(201,168,76,0.1);
+            position: absolute;
+            top: 16px;
+            right: 24px;
+            line-height: 1;
+        }
+
+        .testimonial:hover { border-color: rgba(201,168,76,0.15); }
+
+        .testimonial-stars {
+            color: var(--gold);
+            font-size: 0.7rem;
+            letter-spacing: 3px;
+            margin-bottom: 24px;
+        }
+
+        .testimonial p {
+            font-size: 0.88rem;
+            color: var(--text-dim);
+            line-height: 1.85;
+            font-style: italic;
+            margin-bottom: 28px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.05rem;
+        }
+
+        .testimonial-author {
+            font-size: 0.8rem;
+            color: var(--text);
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        .testimonial-role {
+            font-size: 0.68rem;
+            color: var(--text-muted);
+            margin-top: 3px;
+            letter-spacing: 1px;
+        }
+
+        /* ═══ CTA SECTION ═══ */
+        .cta-section {
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            background: var(--dark);
+        }
+
+        .cta-bg {
+            position: absolute;
+            inset: 0;
+        }
+
+        .cta-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.15;
+            filter: brightness(0.5) blur(2px);
+        }
+
+        .cta-overlay {
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at center, rgba(8,8,8,0.7), rgba(8,8,8,0.95));
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-content .section-label {
+            justify-content: center;
+        }
+
+        .cta-content .section-label::before { display: none; }
+
+        .cta-content .section-title { margin-bottom: 16px; }
+
+        .cta-content .section-desc {
+            margin: 0 auto 44px;
+            text-align: center;
+        }
+
+        .cta-actions {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-phone {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            color: var(--gold);
+            margin-top: 36px;
+            display: block;
+            text-decoration: none;
+            font-weight: 400;
+            letter-spacing: 2px;
+            transition: color 0.3s;
+        }
+
+        .cta-phone:hover { color: var(--gold-light); }
+
+        /* ═══ FOOTER ═══ */
+        footer {
+            padding: 64px 80px 32px;
+            border-top: 1px solid rgba(201,168,76,0.08);
+            background: var(--dark-2);
+        }
+
+        .footer-top {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 48px;
+        }
+
+        .footer-brand .nav-logo {
+            margin-bottom: 20px;
+        }
+
+        .footer-brand p {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            line-height: 1.8;
+            max-width: 280px;
+        }
+
+        .footer-col h4 {
+            font-size: 0.65rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 24px;
+        }
+
+        .footer-col ul { list-style: none; }
+
+        .footer-col li { margin-bottom: 12px; }
+
+        .footer-col a {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-col a:hover { color: var(--gold); }
+
+        .footer-bottom {
+            padding-top: 24px;
+            border-top: 1px solid rgba(255,255,255,0.04);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-bottom p {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+        }
+
+        /* ═══ LIGHTBOX ═══ */
+        .lightbox {
+            position: fixed;
+            inset: 0;
+            background: rgba(8,8,8,0.96);
+            z-index: 10000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            cursor: zoom-out;
+            backdrop-filter: blur(10px);
+        }
+
+        .lightbox.active { display: flex; }
+
+        .lightbox img {
+            max-width: 85%;
+            max-height: 85vh;
+            object-fit: contain;
+            border: 1px solid rgba(201,168,76,0.1);
+            box-shadow: 0 0 80px rgba(0,0,0,0.5);
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 30px;
+            right: 40px;
+            color: var(--gold);
+            font-size: 1.5rem;
+            cursor: pointer;
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(201,168,76,0.2);
+            transition: all 0.3s;
+            background: none;
+        }
+
+        .lightbox-close:hover {
+            background: var(--gold);
+            color: var(--dark);
+        }
+
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--gold);
+            font-size: 2rem;
+            cursor: pointer;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(201,168,76,0.15);
+            transition: all 0.3s;
+            background: rgba(8,8,8,0.5);
+        }
+
+        .lightbox-nav:hover {
+            background: var(--gold);
+            color: var(--dark);
+        }
+
+        .lightbox-prev { left: 30px; }
+        .lightbox-next { right: 30px; }
+
+        /* ═══ ANIMATIONS ═══ */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-40px);
+            transition: all 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal-left.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .reveal-right {
+            opacity: 0;
+            transform: translateX(40px);
+            transition: all 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal-right.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* ═══ RESPONSIVE ═══ */
+        @media (max-width: 1024px) {
+            section { padding: 100px 40px; }
+            .hero-content { padding: 0 40px; }
+            .hero-strip { display: none; }
+            .about-section { grid-template-columns: 1fr; gap: 60px; }
+            .amenities-grid { grid-template-columns: repeat(2, 1fr); }
+            .highlight-section { grid-template-columns: 1fr; }
+            .highlight-text { padding: 60px 40px; }
+            .highlight-image { height: 350px; }
+            .location-grid { grid-template-columns: 1fr; gap: 40px; }
+            .footer-top { grid-template-columns: 1fr 1fr; gap: 40px; }
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: auto;
+            }
+            .gallery-item:nth-child(1),
+            .gallery-item:nth-child(2),
+            .gallery-item:nth-child(3),
+            .gallery-item:nth-child(4),
+            .gallery-item:nth-child(5),
+            .gallery-item:nth-child(6),
+            .gallery-item:nth-child(7),
+            .gallery-item:nth-child(8) {
+                grid-column: auto;
+            }
+            .gallery-grid { padding: 0 40px; gap: 8px; }
+            .gallery-item { height: 220px; }
+        }
+
+        @media (max-width: 768px) {
+            nav { padding: 16px 24px; }
+            nav.scrolled { padding: 14px 24px; }
+            .nav-links { display: none; }
+            .menu-toggle { display: flex; }
+
+            .nav-links.open {
+                display: flex;
+                flex-direction: column;
+                position: fixed;
+                top: 0; left: 0; right: 0; bottom: 0;
+                background: rgba(8,8,8,0.98);
+                justify-content: center;
+                align-items: center;
+                gap: 28px;
+                z-index: 999;
+                backdrop-filter: blur(20px);
+            }
+
+            .nav-links.open a { font-size: 1.1rem; letter-spacing: 3px; }
+
+            section { padding: 80px 24px; }
+            .hero-content { padding: 0 24px; }
+            .hero-scroll { left: 24px; }
+            .stats-bar { grid-template-columns: repeat(2, 1fr); }
+            .about-images { height: 400px; }
+            .about-img-main { width: 75%; height: 65%; }
+            .about-img-secondary { width: 60%; height: 50%; }
+            .amenities-grid { grid-template-columns: 1fr 1fr; }
+            .rooms-grid { grid-template-columns: 1fr; }
+            .testimonial-grid { grid-template-columns: 1fr; }
+            .footer-top { grid-template-columns: 1fr; gap: 32px; }
+            .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+            footer { padding: 48px 24px 24px; }
+            .cursor-glow { display: none; }
+            .gallery-grid { grid-template-columns: 1fr; padding: 0 24px; gap: 6px; }
+            .gallery-item { height: 200px; }
+            .gallery-header { padding: 0 24px; }
+            .gallery-section { padding: 80px 0; }
+            .highlight-text { padding: 48px 24px; }
+            .whatsapp-fab { bottom: 20px; right: 20px; width: 52px; height: 52px; }
+            .whatsapp-fab svg { width: 26px; height: 26px; }
+            .faq-grid { grid-template-columns: 1fr; }
+        }
+
+        /* ═══ LOADING SCREEN ═══ */
+        .loader {
+            position: fixed;
+            inset: 0;
+            background: var(--dark);
+            z-index: 99999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 28px;
+            transition: opacity 0.6s ease, visibility 0.6s ease;
+        }
+
+        .loader.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .loader-logo {
+            width: 180px;
+            height: auto;
+            opacity: 0;
+            animation: logo-fade 1.2s ease 0.2s forwards;
+        }
+
+        @keyframes logo-fade {
+            0% { opacity: 0; transform: scale(0.9); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+
+        .loader-bar {
+            width: 200px;
+            height: 1px;
+            background: rgba(201,168,76,0.15);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .loader-bar::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 0;
+            background: var(--gold);
+            animation: load-progress 1.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        @keyframes load-progress {
+            0% { width: 0; }
+            100% { width: 100%; }
+        }
+
+        /* ═══ WHATSAPP FAB ═══ */
+        .whatsapp-fab {
+            position: fixed;
+            bottom: 32px;
+            right: 32px;
+            width: 60px;
+            height: 60px;
+            background: #25d366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9997;
+            box-shadow: 0 4px 20px rgba(37,211,102,0.3);
+            transition: all 0.3s;
+            text-decoration: none;
+            animation: fab-bounce 2s ease 3s both;
+        }
+
+        .whatsapp-fab:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 30px rgba(37,211,102,0.4);
+        }
+
+        .whatsapp-fab svg {
+            width: 30px;
+            height: 30px;
+            fill: white;
+        }
+
+        .whatsapp-fab .fab-pulse {
+            position: absolute;
+            inset: -4px;
+            border-radius: 50%;
+            border: 2px solid rgba(37,211,102,0.4);
+            animation: fab-ring 2s ease infinite;
+        }
+
+        @keyframes fab-ring {
+            0% { transform: scale(1); opacity: 1; }
+            100% { transform: scale(1.4); opacity: 0; }
+        }
+
+        @keyframes fab-bounce {
+            0% { opacity: 0; transform: scale(0) translateY(20px); }
+            50% { transform: scale(1.15) translateY(-5px); }
+            100% { opacity: 1; transform: scale(1) translateY(0); }
+        }
+
+        /* ═══ FAQ ═══ */
+        .faq-section { background: var(--dark); }
+
+        .faq-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .faq-header .section-label {
+            justify-content: center;
+        }
+
+        .faq-header .section-label::before { display: none; }
+
+        .faq-header .section-desc {
+            margin: 0 auto;
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            border: 1px solid rgba(201,168,76,0.06);
+            background: var(--dark-2);
+            overflow: hidden;
+            transition: border-color 0.3s;
+        }
+
+        .faq-item:hover { border-color: rgba(201,168,76,0.15); }
+
+        .faq-question {
+            padding: 24px 28px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.9rem;
+            color: var(--text);
+            font-weight: 400;
+            user-select: none;
+        }
+
+        .faq-question .faq-toggle {
+            color: var(--gold);
+            font-size: 1.2rem;
+            transition: transform 0.3s;
+            flex-shrink: 0;
+            margin-left: 16px;
+        }
+
+        .faq-item.open .faq-toggle { transform: rotate(45deg); }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1), padding 0.3s;
+        }
+
+        .faq-item.open .faq-answer {
+            max-height: 200px;
+        }
+
+        .faq-answer-inner {
+            padding: 0 28px 24px;
+            font-size: 0.83rem;
+            color: var(--text-dim);
+            line-height: 1.8;
+        }
+
+        /* ═══ BACK TO TOP ═══ */
+        .back-to-top {
+            position: fixed;
+            bottom: 32px;
+            left: 32px;
+            width: 44px;
+            height: 44px;
+            background: var(--dark-3);
+            border: 1px solid rgba(201,168,76,0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            font-size: 1.2rem;
+            cursor: pointer;
+            z-index: 9997;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background: var(--gold);
+            color: var(--dark);
+        }
+    </style>
+</head>
+<body>
+
+<!-- Loading Screen -->
+<div class="loader" id="loader">
+    <img class="loader-logo" src="photos/logo.jpg" alt="Shri Datta Sai PG">
+    <div class="loader-bar"></div>
+</div>
+
+<!-- Cursor Glow -->
+<div class="cursor-glow" id="cursorGlow"></div>
+
+<!-- Film Grain -->
+<svg class="grain">
+    <filter id="grain-filter">
+        <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/>
+    </filter>
+    <rect width="100%" height="100%" filter="url(#grain-filter)"/>
+</svg>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox">
+    <button class="lightbox-close" onclick="closeLightbox()">&#x2715;</button>
+    <div class="lightbox-nav lightbox-prev" onclick="navLightbox(-1)">&#8249;</div>
+    <div class="lightbox-nav lightbox-next" onclick="navLightbox(1)">&#8250;</div>
+    <img id="lightboxImg" src="" alt="Gallery Image">
+</div>
+
+<!-- Navigation -->
+<nav id="navbar">
+    <a href="#hero" class="nav-logo">
+        <img src="photos/logo.jpg" alt="SDS Logo">
+        <div class="nav-logo-text">Shri Datta Sai<span>Girls & Boys PG</span></div>
+    </a>
+    <ul class="nav-links" id="navLinks">
+        <li><a href="#about">About</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#amenities">Amenities</a></li>
+        <li><a href="#rooms">Rooms</a></li>
+        <li><a href="#location">Location</a></li>
+    </ul>
+    <button class="nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Book Now</button>
+    <div class="menu-toggle" id="menuToggle" onclick="document.getElementById('navLinks').classList.toggle('open')">
+        <span></span><span></span><span></span>
+    </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero" id="hero">
+    <div class="hero-bg">
+        <img src="photos/corridor.png" alt="Shri Datta Sai PG Corridor">
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <div class="hero-badge">Girls & Boys PG &bull; Hinjawadi, Pune</div>
+        <h1>Live with <em>Elegance,</em><br>Feel at Home</h1>
+        <p class="hero-sub">Premium paying guest living for girls & boys — homely food, modern amenities, and the warmth of a second home in Hinjawadi's IT corridor.</p>
+        <div class="hero-actions">
+            <a href="#rooms" class="btn-primary">Explore Rooms</a>
+            <a href="https://maps.app.goo.gl/fpicdZjBqRnnfHiMA" target="_blank" class="btn-outline">Get Directions</a>
+        </div>
+    </div>
+    <div class="hero-strip">
+        <div class="hero-strip-img"><img src="photos/room.png" alt="Room"></div>
+        <div class="hero-strip-img"><img src="photos/lift.png" alt="Elevator"></div>
+        <div class="hero-strip-img"><img src="photos/room2.png" alt="Room"></div>
+    </div>
+    <div class="hero-scroll">
+        <div class="scroll-line"></div>
+        <span>Scroll to explore</span>
+    </div>
+</section>
+
+<!-- Stats Bar -->
+<div class="stats-bar">
+    <div class="stat reveal">
+        <div class="stat-number" data-count="50">0</div>
+        <div class="stat-label">Happy Residents</div>
+    </div>
+    <div class="stat reveal">
+        <div class="stat-number" data-count="3">0</div>
+        <div class="stat-label">Meals Daily</div>
+    </div>
+    <div class="stat reveal">
+        <div class="stat-number" data-count="24">0</div>
+        <div class="stat-label">Hour Security</div>
+    </div>
+    <div class="stat reveal">
+        <div class="stat-number" data-count="100">0%</div>
+        <div class="stat-label">WiFi Uptime</div>
+    </div>
+</div>
+
+<!-- About -->
+<section id="about">
+    <div class="about-section">
+        <div class="about-images reveal-left">
+            <div class="about-img-main">
+                <img src="photos/room.png" alt="Premium Room at Shri Datta Sai PG">
+            </div>
+            <div class="about-img-accent">
+                <img src="photos/logo.jpg" alt="SDS">
+            </div>
+            <div class="about-img-secondary">
+                <img src="photos/lift.png" alt="Premium Elevator">
+            </div>
+        </div>
+        <div class="about-text reveal-right">
+            <div class="section-label">Our Story</div>
+            <h2 class="section-title">Not Just a PG.<br>Your Second Home.</h2>
+            <div class="gold-divider"></div>
+            <p class="section-desc">Shri Datta Sai PG is built for professionals who refuse to compromise on quality. Marble flooring, a gold-trimmed elevator, spotless rooms, and three home-cooked meals every day — we've reimagined what PG living in Hinjawadi should feel like.</p>
+            <ul class="highlight-features" style="margin-top:32px;">
+                <li>
+                    <span class="feat-icon">🏢</span>
+                    <span>Elevator access on every floor</span>
+                </li>
+                <li>
+                    <span class="feat-icon">🍽️</span>
+                    <span>3 home-cooked meals daily</span>
+                </li>
+                <li>
+                    <span class="feat-icon">📶</span>
+                    <span>High-speed WiFi in every room</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- Photo Gallery -->
+<section id="gallery" class="gallery-section">
+    <div class="gallery-header reveal">
+        <div class="section-label">Gallery</div>
+        <h2 class="section-title">See It For Yourself</h2>
+        <div class="gold-divider" style="margin: 20px auto;"></div>
+        <p class="section-desc">Every corner is built with care. Take a look around.</p>
+    </div>
+    <div class="gallery-grid">
+        <div class="gallery-item reveal" onclick="openLightbox(0)">
+            <img src="photos/room.png" alt="Premium Double Room">
+            <span class="gallery-label">Premium Room</span>
+        </div>
+        <div class="gallery-item reveal" onclick="openLightbox(1)">
+            <img src="photos/corridor.png" alt="Corridor">
+            <span class="gallery-label">Corridor</span>
+        </div>
+        <div class="gallery-item reveal" onclick="openLightbox(2)">
+            <img src="photos/lift.png" alt="Gold Elevator">
+            <span class="gallery-label">Elevator</span>
+        </div>
+        <div class="gallery-item reveal" onclick="openLightbox(3)">
+            <img src="photos/room2.png" alt="Room with Lamps">
+            <span class="gallery-label">Cozy Room</span>
+        </div>
+        <div class="gallery-item reveal" onclick="openLightbox(4)">
+            <img src="photos/room3.png" alt="Room with Attached Bath">
+            <span class="gallery-label">Room View</span>
+        </div>
+        <div class="gallery-item reveal" onclick="openLightbox(5)">
+            <img src="photos/furniture.png" alt="Study Desk">
+            <span class="gallery-label">Study Desk</span>
+        </div>
+        <div class="gallery-item reveal" onclick="openLightbox(6)">
+            <img src="photos/lift1.png" alt="Elevator Detail">
+            <span class="gallery-label">Elevator Detail</span>
+        </div>
+        <div class="gallery-item reveal" onclick="openLightbox(7)">
+            <img src="photos/washroom.png" alt="Clean Washroom">
+            <span class="gallery-label">Washroom</span>
+        </div>
+    </div>
+</section>
+
+<!-- Premium Highlight — Elevator -->
+<div class="highlight-section">
+    <div class="highlight-image reveal-left">
+        <img src="photos/lift.png" alt="Gold-trimmed Elevator at Shri Datta Sai PG">
+    </div>
+    <div class="highlight-text reveal-right">
+        <div class="section-label">Premium Feature</div>
+        <h2 class="section-title">Elevator Access.<br>On Every Floor.</h2>
+        <div class="gold-divider"></div>
+        <p class="section-desc">No more climbing stairs after a long day. Our gold-trimmed elevator with marble lobby sets Shri Datta Sai apart from every other PG in Hinjawadi.</p>
+        <ul class="highlight-features">
+            <li>
+                <span class="feat-icon">✨</span>
+                <span>Marble-clad lobby & corridors</span>
+            </li>
+            <li>
+                <span class="feat-icon">🛗</span>
+                <span>Modern elevator — all floors</span>
+            </li>
+            <li>
+                <span class="feat-icon">🔒</span>
+                <span>Digital access control system</span>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<!-- Amenities -->
+<section id="amenities" class="amenities-section">
+    <div class="amenities-header reveal">
+        <div class="section-label">Amenities</div>
+        <h2 class="section-title">Everything You Need.<br>Nothing You Don't.</h2>
+        <div class="gold-divider" style="margin: 20px auto;"></div>
+        <p class="section-desc">Every detail is designed to make your stay effortless.</p>
+    </div>
+    <div class="amenities-grid">
+        <div class="amenity reveal">
+            <span class="amenity-icon">🍽️</span>
+            <h4>3x Homely Meals</h4>
+            <p>Breakfast, lunch & dinner — fresh home-cooked food daily</p>
+        </div>
+        <div class="amenity reveal">
+            <span class="amenity-icon">📶</span>
+            <h4>WiFi in Every Room</h4>
+            <p>High-speed internet for work & entertainment</p>
+        </div>
+        <div class="amenity reveal">
+            <span class="amenity-icon">📹</span>
+            <h4>24/7 CCTV</h4>
+            <p>Round-the-clock surveillance for your safety</p>
+        </div>
+        <div class="amenity reveal">
+            <span class="amenity-icon">👕</span>
+            <h4>Washing Machine</h4>
+            <p>In-house laundry facilities available</p>
+        </div>
+        <div class="amenity reveal">
+            <span class="amenity-icon">🧊</span>
+            <h4>Fridge & Dispenser</h4>
+            <p>Refrigerator + hot/cold water on every floor</p>
+        </div>
+        <div class="amenity reveal">
+            <span class="amenity-icon">🔥</span>
+            <h4>Self-Cooking Gas</h4>
+            <p>Cook your own meals whenever you want</p>
+        </div>
+        <div class="amenity reveal">
+            <span class="amenity-icon">🚿</span>
+            <h4>Hot & Cold Water</h4>
+            <p>24/7 hot and cold water supply</p>
+        </div>
+        <div class="amenity reveal">
+            <span class="amenity-icon">⚡</span>
+            <h4>Power Backup</h4>
+            <p>Uninterrupted power — zero downtime</p>
+        </div>
+        <div class="amenity reveal">
+            <span class="amenity-icon">🏍️</span>
+            <h4>2-Wheeler Parking</h4>
+            <p>Secure parking for your vehicle</p>
+        </div>
+        <div class="amenity reveal">
+            <span class="amenity-icon">🧹</span>
+            <h4>Daily Cleaning</h4>
+            <p>Professional housekeeping every day</p>
+        </div>
+        <div class="amenity reveal">
+            <span class="amenity-icon">🛗</span>
+            <h4>Elevator Access</h4>
+            <p>Modern elevator — no more stairs</p>
+        </div>
+        <div class="amenity reveal">
+            <span class="amenity-icon">🏠</span>
+            <h4>Homely Vibe</h4>
+            <p>A community that feels like family</p>
+        </div>
+    </div>
+</section>
+
+<!-- Rooms & Pricing -->
+<section id="rooms" class="rooms-section">
+    <div class="rooms-header reveal">
+        <div class="section-label">Rooms & Pricing</div>
+        <h2 class="section-title">Choose Your Space</h2>
+        <div class="gold-divider" style="margin: 20px auto;"></div>
+        <p class="section-desc">Transparent pricing. No hidden charges. Pick the plan that fits.</p>
+    </div>
+
+    <div class="rooms-grid">
+        <!-- Double Sharing -->
+        <div class="room-card reveal">
+            <div class="room-visual">
+                <img src="photos/room1.png" alt="Double Sharing Room">
+            </div>
+            <div class="room-details">
+                <h3 class="room-type">Double Sharing</h3>
+                <p class="room-tagline">Perfect for those who enjoy company</p>
+                <div class="room-price">
+                    <span class="currency">&#8377;</span>
+                    <span class="amount">8,000</span>
+                    <span class="period">/month</span>
+                </div>
+                <ul class="room-features">
+                    <li>Shared room for two residents</li>
+                    <li>All amenities included</li>
+                    <li>3 home-cooked meals per day</li>
+                    <li>WiFi, cleaning & power backup</li>
+                    <li>30-day lock-in period</li>
+                </ul>
+                <a href="#contact" class="room-cta">Book This Room</a>
+            </div>
+        </div>
+
+        <!-- Single Sharing -->
+        <div class="room-card featured reveal">
+            <div class="room-badge">Popular</div>
+            <div class="room-visual">
+                <img src="photos/room.png" alt="Single Occupancy Room">
+            </div>
+            <div class="room-details">
+                <h3 class="room-type">Single Occupancy</h3>
+                <p class="room-tagline">Maximum privacy, maximum comfort</p>
+                <div class="room-price">
+                    <span class="currency">&#8377;</span>
+                    <span class="amount">14,000</span>
+                    <span class="period">/month</span>
+                </div>
+                <ul class="room-features">
+                    <li>Private room — all yours</li>
+                    <li>All amenities included</li>
+                    <li>3 home-cooked meals per day</li>
+                    <li>WiFi, cleaning & power backup</li>
+                    <li>30-day lock-in period</li>
+                </ul>
+                <a href="#contact" class="room-cta">Book This Room</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="deposit-info reveal">
+        <p><strong>Security Deposit:</strong> &#8377;3,000 (&#8377;1,000 deducted as one-time maintenance)<br>
+        <strong>Lock-in Period:</strong> 30 days &nbsp;&bull;&nbsp; <strong>No hidden charges.</strong></p>
+    </div>
+</section>
+
+<!-- Location -->
+<section id="location" class="location-section">
+    <div class="location-grid">
+        <div class="location-info reveal-left">
+            <div class="section-label">Location</div>
+            <h2 class="section-title">In the Heart of<br>Hinjawadi IT Hub</h2>
+            <div class="gold-divider"></div>
+            <p class="section-desc">Strategically located near Rajiv Gandhi Infotech Park — your office is minutes away.</p>
+            <ul class="highlight-list">
+                <li>
+                    <span class="hl-icon">💼</span>
+                    <span>Minutes from Rajiv Gandhi Infotech Park</span>
+                </li>
+                <li>
+                    <span class="hl-icon">🛒</span>
+                    <span>Near restaurants, supermarkets & malls</span>
+                </li>
+                <li>
+                    <span class="hl-icon">🚌</span>
+                    <span>Well-connected via Hinjawadi flyover</span>
+                </li>
+                <li>
+                    <span class="hl-icon">🏥</span>
+                    <span>Close to hospitals, pharmacies & ATMs</span>
+                </li>
+            </ul>
+        </div>
+        <div class="location-map reveal-right">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3781.8!2d73.7!3d18.59!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTjCsDM1JzI0LjAiTiA3M8KwNDInMDAuMCJF!5e0!3m2!1sen!2sin!4v1600000000000!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <a href="https://maps.app.goo.gl/fpicdZjBqRnnfHiMA" target="_blank" class="map-overlay-btn">Open in Maps &#8594;</a>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials -->
+<section class="testimonials-section">
+    <div class="testimonials-header reveal">
+        <div class="section-label">Reviews</div>
+        <h2 class="section-title">What Residents Say</h2>
+        <div class="gold-divider" style="margin: 20px auto;"></div>
+    </div>
+    <div class="testimonial-grid">
+        <div class="testimonial reveal">
+            <div class="testimonial-stars">&#9733; &#9733; &#9733; &#9733; &#9733;</div>
+            <p>"The food is genuinely home-cooked. After a long day at work, coming back to a hot meal and a clean room makes all the difference."</p>
+            <div class="testimonial-author">Rahul K.</div>
+            <div class="testimonial-role">Software Engineer, Infosys</div>
+        </div>
+        <div class="testimonial reveal">
+            <div class="testimonial-stars">&#9733; &#9733; &#9733; &#9733; &#9733;</div>
+            <p>"Best PG in Hinjawadi. WiFi works perfectly, rooms are cleaned daily, and the elevator is such a luxury. Highly recommend."</p>
+            <div class="testimonial-author">Priya M.</div>
+            <div class="testimonial-role">Data Analyst, Wipro</div>
+        </div>
+        <div class="testimonial reveal">
+            <div class="testimonial-stars">&#9733; &#9733; &#9733; &#9733; &#9733;</div>
+            <p>"Moved in 6 months ago and never looked back. The corridor and lobby feel like a hotel, not a PG. Owner genuinely cares."</p>
+            <div class="testimonial-author">Amit S.</div>
+            <div class="testimonial-role">DevOps Engineer, TCS</div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section">
+    <div class="faq-header reveal">
+        <div class="section-label">FAQ</div>
+        <h2 class="section-title">Common Questions</h2>
+        <div class="gold-divider" style="margin: 20px auto;"></div>
+    </div>
+    <div class="faq-grid">
+        <div class="faq-item reveal">
+            <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                <span>What is the minimum stay period?</span>
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer"><div class="faq-answer-inner">The lock-in period is 30 days. After that, you can leave with a 15-day prior notice.</div></div>
+        </div>
+        <div class="faq-item reveal">
+            <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                <span>Is food included in the rent?</span>
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer"><div class="faq-answer-inner">Yes, three home-cooked meals (breakfast, lunch & dinner) are included in the rent. No extra charges.</div></div>
+        </div>
+        <div class="faq-item reveal">
+            <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                <span>What about the security deposit?</span>
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer"><div class="faq-answer-inner">Security deposit is &#8377;3,000. Out of this, &#8377;1,000 is deducted as a one-time maintenance charge. The remaining &#8377;2,000 is refundable when you vacate.</div></div>
+        </div>
+        <div class="faq-item reveal">
+            <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                <span>Is there a curfew or entry timing?</span>
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer"><div class="faq-answer-inner">We understand professionals have different schedules. There are flexible timings with 24/7 secure access to the building.</div></div>
+        </div>
+        <div class="faq-item reveal">
+            <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                <span>Can I visit before booking?</span>
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer"><div class="faq-answer-inner">Absolutely! We encourage a free property tour. Call us at +91 78756 68666 or just walk in during the day.</div></div>
+        </div>
+        <div class="faq-item reveal">
+            <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                <span>Is WiFi available in rooms?</span>
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer"><div class="faq-answer-inner">Yes, high-speed WiFi is available in every room. We maintain consistent connectivity for work-from-home and streaming.</div></div>
+        </div>
+        <div class="faq-item reveal">
+            <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                <span>Are guests/visitors allowed?</span>
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer"><div class="faq-answer-inner">Visitors are allowed during daytime hours in the common area. Overnight guests are not permitted for security reasons.</div></div>
+        </div>
+        <div class="faq-item reveal">
+            <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                <span>Is there an elevator?</span>
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer"><div class="faq-answer-inner">Yes! We have a modern elevator with access to all floors — a rare luxury in Hinjawadi PGs.</div></div>
+        </div>
+    </div>
+</section>
+
+<!-- WhatsApp FAB -->
+<a href="https://wa.me/917875668666?text=Hi%2C%20I%27m%20interested%20in%20a%20room%20at%20Shri%20Datta%20Sai%20PG" target="_blank" class="whatsapp-fab" aria-label="Chat on WhatsApp">
+    <div class="fab-pulse"></div>
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<!-- Back to Top -->
+<a href="#hero" class="back-to-top" id="backToTop" aria-label="Back to top">&#8593;</a>
+
+<!-- CTA Section -->
+<section id="contact" class="cta-section">
+    <div class="cta-bg">
+        <img src="photos/corridor.png" alt="">
+    </div>
+    <div class="cta-overlay"></div>
+    <div class="cta-content reveal">
+        <div class="section-label">Ready to Move In?</div>
+        <h2 class="section-title">Book Your Room Today</h2>
+        <p class="section-desc">Limited rooms available. Call us or visit for a free property tour.</p>
+        <div class="cta-actions">
+            <a href="https://maps.app.goo.gl/fpicdZjBqRnnfHiMA" target="_blank" class="btn-primary">Visit Us</a>
+            <a href="https://wa.me/917875668666" target="_blank" class="btn-outline">WhatsApp Us</a>
+        </div>
+        <a href="tel:+917875668666" class="cta-phone">+91 78756 68666</a>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <div class="footer-top">
+        <div class="footer-brand">
+            <a href="#hero" class="nav-logo" style="margin-bottom:12px;">
+                <img src="photos/logo.jpg" alt="SDS Logo">
+                <div class="nav-logo-text">Shri Datta Sai<span>Girls & Boys PG</span></div>
+            </a>
+            <p>Premium Girls & Boys PG accommodation in Hinjawadi, Pune. Where elegance meets home.</p>
+        </div>
+        <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#amenities">Amenities</a></li>
+                <li><a href="#rooms">Rooms & Pricing</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Contact</h4>
+            <ul>
+                <li><a href="tel:+917875668666">+91 78756 68666</a></li>
+                <li><a href="https://maps.app.goo.gl/fpicdZjBqRnnfHiMA" target="_blank">Hinjawadi, Pune</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Meal Timings</h4>
+            <ul>
+                <li><a href="#">Breakfast: 8 - 10 AM</a></li>
+                <li><a href="#">Lunch: 12 - 2 PM</a></li>
+                <li><a href="#">Dinner: 8 - 10 PM</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2026 Shri Datta Sai PG. All rights reserved.</p>
+        <p style="font-size:0.65rem;color:var(--text-muted);">Hinjawadi, Pune, Maharashtra</p>
+    </div>
+</footer>
+
+<script>
+    // ═══ LOADING SCREEN ═══
+    window.addEventListener('load', () => {
+        setTimeout(() => {
+            document.getElementById('loader').classList.add('hidden');
+        }, 2000);
+    });
+
+    // ═══ CURSOR GLOW ═══
+    const glow = document.getElementById('cursorGlow');
+    document.addEventListener('mousemove', e => {
+        glow.style.left = e.clientX + 'px';
+        glow.style.top = e.clientY + 'px';
+    });
+
+    // ═══ NAVBAR SCROLL ═══
+    const nav = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+        nav.classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    // ═══ SCROLL REVEAL ═══
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, i) => {
+            if (entry.isIntersecting) {
+                setTimeout(() => entry.target.classList.add('visible'), i * 60);
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.08 });
+
+    document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => observer.observe(el));
+
+    // ═══ COUNTER ANIMATION ═══
+    const counterObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const el = entry.target;
+                const target = parseInt(el.dataset.count);
+                const suffix = el.textContent.replace(/[0-9]/g, '');
+                const duration = 2200;
+                const start = performance.now();
+
+                function tick(now) {
+                    const progress = Math.min((now - start) / duration, 1);
+                    const ease = 1 - Math.pow(1 - progress, 3);
+                    el.textContent = Math.floor(ease * target) + suffix;
+                    if (progress < 1) requestAnimationFrame(tick);
+                    else el.textContent = target + suffix;
+                }
+                requestAnimationFrame(tick);
+                counterObserver.unobserve(el);
+            }
+        });
+    }, { threshold: 0.5 });
+
+    document.querySelectorAll('[data-count]').forEach(el => counterObserver.observe(el));
+
+    // ═══ SMOOTH SCROLL ═══
+    document.querySelectorAll('.nav-links a').forEach(a => {
+        a.addEventListener('click', e => {
+            e.preventDefault();
+            const target = document.querySelector(a.getAttribute('href'));
+            if (target) target.scrollIntoView({ behavior: 'smooth' });
+            document.getElementById('navLinks').classList.remove('open');
+        });
+    });
+
+    // ═══ LIGHTBOX ═══
+    const galleryImages = [
+        'photos/room.png', 'photos/corridor.png', 'photos/lift.png',
+        'photos/room2.png', 'photos/room3.png', 'photos/furniture.png',
+        'photos/lift1.png', 'photos/washroom.png'
+    ];
+    let currentLightbox = 0;
+
+    function openLightbox(index) {
+        currentLightbox = index;
+        document.getElementById('lightboxImg').src = galleryImages[index];
+        document.getElementById('lightbox').classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+        document.getElementById('lightbox').classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    function navLightbox(dir) {
+        currentLightbox = (currentLightbox + dir + galleryImages.length) % galleryImages.length;
+        document.getElementById('lightboxImg').src = galleryImages[currentLightbox];
+    }
+
+    document.getElementById('lightbox').addEventListener('click', e => {
+        if (e.target === e.currentTarget) closeLightbox();
+    });
+
+    document.addEventListener('keydown', e => {
+        if (!document.getElementById('lightbox').classList.contains('active')) return;
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowLeft') navLightbox(-1);
+        if (e.key === 'ArrowRight') navLightbox(1);
+    });
+
+    // ═══ BACK TO TOP ═══
+    const btt = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+        btt.classList.toggle('visible', window.scrollY > 600);
+    });
+</script>
+
+</body>
+</html>
