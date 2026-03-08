@@ -4,18 +4,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shri Datta Sai PG | Premium Living in Hinjawadi, Pune</title>
-    <meta name="description" content="Premium Girls & Boys PG accommodation in Hinjawadi, Pune. Single & Double sharing rooms with homely food, WiFi, 24/7 security, elevator, and modern amenities.">
-    <meta property="og:title" content="Shri Datta Sai PG | Premium Living in Hinjawadi">
-    <meta property="og:description" content="Premium Girls & Boys PG with elevator, homely food, WiFi, CCTV & modern amenities. Single ₹14K | Double ₹8K/month.">
+    <meta name="description" content="Premium Girls & Boys PG in Hinjawadi, Pune near Rajiv Gandhi Infotech Park. Elevator, 3 homely meals, WiFi, CCTV, daily cleaning. Double ₹8K | Single ₹14K/month. Best PG for IT professionals.">
+    <meta name="keywords" content="PG in Hinjawadi, paying guest Hinjawadi Pune, boys PG Hinjawadi, girls PG Hinjawadi, PG near Infosys Wipro TCS, PG with food Hinjawadi, premium PG Pune, affordable PG Hinjawadi, PG with elevator Pune">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Shri Datta Sai PG | Premium Girls & Boys PG in Hinjawadi, Pune">
+    <meta property="og:description" content="Premium PG with elevator, 3 homely meals, WiFi, CCTV & modern amenities. Near Infosys, Wipro, TCS. Double ₹8K | Single ₹14K/month.">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="en_IN">
     <meta name="theme-color" content="#c9a84c">
     <meta property="og:image" content="photos/logo.jpg">
     <link rel="icon" type="image/jpeg" href="photos/logo.jpg">
     <link rel="apple-touch-icon" href="photos/logo.jpg">
+    <link rel="preload" href="photos/corridor.png" as="image">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LodgingBusiness",
+        "name": "Shri Datta Sai PG",
+        "description": "Premium Girls & Boys PG accommodation in Hinjawadi, Pune with elevator, homely meals, WiFi, CCTV, and modern amenities.",
+        "image": "photos/logo.jpg",
+        "telephone": "+91-78756-68666",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Hinjawadi",
+            "addressRegion": "Maharashtra",
+            "postalCode": "411057",
+            "addressCountry": "IN"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "18.59",
+            "longitude": "73.7"
+        },
+        "priceRange": "₹8,000 - ₹14,000/month",
+        "amenityFeature": [
+            {"@type": "LocationFeatureSpecification", "name": "Elevator"},
+            {"@type": "LocationFeatureSpecification", "name": "WiFi"},
+            {"@type": "LocationFeatureSpecification", "name": "Meals Included"},
+            {"@type": "LocationFeatureSpecification", "name": "CCTV Security"},
+            {"@type": "LocationFeatureSpecification", "name": "Daily Cleaning"},
+            {"@type": "LocationFeatureSpecification", "name": "Power Backup"}
+        ],
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.8",
+            "reviewCount": "50"
+        }
+    }
+    </script>
     <style>
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -34,7 +74,7 @@
             --text-muted: #5c5647;
         }
 
-        html { scroll-behavior: smooth; }
+        html { scroll-behavior: smooth; scroll-padding-top: 90px; }
 
         body {
             font-family: 'Inter', sans-serif;
@@ -1905,6 +1945,446 @@
             background: var(--gold);
             color: var(--dark);
         }
+
+        /* ═══ CHATBOT ═══ */
+        .chat-widget { position: fixed; bottom: 32px; right: 110px; z-index: 9998; font-family: 'Inter', sans-serif; }
+        .chat-btn { width: 60px; height: 60px; background: var(--dark-2); border: 1px solid var(--gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 4px 20px rgba(201,168,76,0.2); transition: all 0.3s; font-size: 1.5rem; }
+        .chat-btn:hover { transform: scale(1.1); background: var(--gold); border-color: var(--gold); }
+        .chat-window { position: absolute; bottom: 80px; right: 0; width: 340px; height: 450px; background: var(--dark-2); border: 1px solid rgba(201,168,76,0.2); border-radius: 12px; display: none; flex-direction: column; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,0.5); }
+        .chat-window.open { display: flex; animation: slideUp 0.3s ease; }
+        @keyframes slideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .chat-header { background: var(--dark); padding: 16px 20px; border-bottom: 1px solid rgba(201,168,76,0.1); display: flex; justify-content: space-between; align-items: center; }
+        .chat-header h3 { color: var(--gold); font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; margin: 0; font-weight: 500;}
+        .chat-close { color: var(--text-muted); cursor: pointer; font-size: 1.2rem; background: none; border: none; transition: color 0.3s; }
+        .chat-close:hover { color: var(--gold); }
+        .chat-body { flex: 1; padding: 20px; overflow-y: auto; display: flex; flex-direction: column; gap: 12px; scroll-behavior: smooth; }
+        .chat-msg { max-width: 85%; padding: 12px 16px; border-radius: 8px; font-size: 0.85rem; line-height: 1.5; }
+        .chat-msg.bot { background: var(--dark-3); border: 1px solid rgba(201,168,76,0.1); color: var(--text); align-self: flex-start; border-bottom-left-radius: 0; }
+        .chat-msg.user { background: var(--gold); color: var(--dark); align-self: flex-end; border-bottom-right-radius: 0; font-weight: 500; }
+        .chat-input-area { padding: 16px; background: var(--dark); border-top: 1px solid rgba(201,168,76,0.1); display: flex; gap: 8px; }
+        .chat-input { flex: 1; background: var(--dark-3); border: 1px solid rgba(201,168,76,0.2); color: var(--text); padding: 10px 14px; border-radius: 6px; outline: none; font-family: 'Inter', sans-serif; font-size: 0.85rem; transition: border-color 0.3s; }
+        .chat-input:focus { border-color: var(--gold); }
+        .chat-send { background: var(--gold); color: var(--dark); border: none; padding: 0 16px; border-radius: 6px; cursor: pointer; font-weight: 600; transition: all 0.3s; }
+        .chat-send:hover { background: var(--gold-light); }
+        .typing-indicator { display: none; align-self: flex-start; color: var(--text-muted); font-size: 0.8rem; padding: 0 10px 10px; font-style: italic; }
+        @media (max-width: 768px) {
+            .chat-widget { right: 20px; bottom: 100px; }
+            .chat-window { position: fixed; bottom: 0; right: 0; left: 0; top: 0; width: 100%; height: 100%; border-radius: 0; z-index: 10000; }
+            .chat-window.open { animation: none; }
+        }
+
+        /* ═══ GOOGLE TRUST BADGE ═══ */
+        .trust-badge {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 24px;
+        }
+        .trust-badge a {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            padding: 8px 16px;
+            border: 1px solid rgba(201,168,76,0.15);
+            border-radius: 6px;
+            background: rgba(201,168,76,0.04);
+            transition: all 0.3s;
+        }
+        .trust-badge a:hover { border-color: var(--gold); background: rgba(201,168,76,0.08); }
+        .trust-badge .trust-stars { color: #f5c518; font-size: 0.95rem; letter-spacing: 1px; }
+        .trust-badge .trust-text { color: var(--text-dim); font-size: 0.75rem; font-family: 'Inter', sans-serif; }
+        .trust-badge .trust-text strong { color: var(--text); }
+
+        /* ═══ WHY CHOOSE US COMPARISON ═══ */
+        .compare-section { background: var(--dark-2); }
+        .compare-header { text-align: center; margin-bottom: 60px; }
+        .compare-header .section-label { justify-content: center; }
+        .compare-header .section-label::before { display: none; }
+        .compare-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            max-width: 900px;
+            margin: 0 auto;
+            border: 1px solid rgba(201,168,76,0.1);
+            overflow: hidden;
+        }
+        .compare-col { padding: 0; }
+        .compare-col-header {
+            padding: 20px;
+            text-align: center;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+        .compare-col:first-child .compare-col-header {
+            background: var(--dark-3);
+            color: var(--text-muted);
+        }
+        .compare-col:last-child .compare-col-header {
+            background: linear-gradient(135deg, rgba(201,168,76,0.15), rgba(201,168,76,0.05));
+            color: var(--gold);
+        }
+        .compare-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 14px 20px;
+            border-top: 1px solid rgba(255,255,255,0.03);
+            font-size: 0.82rem;
+            color: var(--text-dim);
+        }
+        .compare-col:last-child .compare-row { color: var(--text); }
+        .compare-icon { flex-shrink: 0; width: 22px; text-align: center; font-size: 0.85rem; }
+        .compare-icon.yes { color: #4ade80; }
+        .compare-icon.no { color: #f87171; }
+
+        @media (max-width: 768px) {
+            .compare-section { padding: 64px 16px; }
+            .compare-grid { font-size: 0.78rem; }
+            .compare-col-header { font-size: 0.9rem; padding: 16px 12px; }
+            .compare-row { padding: 11px 12px; gap: 8px; font-size: 0.75rem; }
+        }
+
+        /* ═══ MOVE-IN PROCESS ═══ */
+        .process-section { background: var(--dark); }
+        .process-header { text-align: center; margin-bottom: 60px; }
+        .process-header .section-label { justify-content: center; }
+        .process-header .section-label::before { display: none; }
+        .process-steps {
+            display: flex;
+            justify-content: center;
+            gap: 0;
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+        }
+        .process-step {
+            flex: 1;
+            text-align: center;
+            position: relative;
+            padding: 0 24px;
+        }
+        .process-step::after {
+            content: '';
+            position: absolute;
+            top: 30px;
+            right: -10%;
+            width: 20%;
+            height: 1px;
+            background: linear-gradient(90deg, var(--gold), transparent);
+        }
+        .process-step:last-child::after { display: none; }
+        .step-number {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            border: 2px solid var(--gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            color: var(--gold);
+            background: rgba(201,168,76,0.05);
+        }
+        .step-icon { font-size: 1.6rem; margin-bottom: 12px; }
+        .step-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.15rem;
+            color: var(--text);
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        .step-desc { font-size: 0.78rem; color: var(--text-dim); line-height: 1.6; }
+
+        @media (max-width: 768px) {
+            .process-section { padding: 64px 24px; }
+            .process-steps { flex-direction: column; gap: 40px; }
+            .process-step { padding: 0; }
+            .process-step::after {
+                top: auto;
+                bottom: -24px;
+                left: 50%;
+                right: auto;
+                width: 1px;
+                height: 20px;
+                transform: translateX(-50%);
+                background: linear-gradient(180deg, var(--gold), transparent);
+            }
+            .step-number { width: 50px; height: 50px; font-size: 1.2rem; }
+        }
+
+        /* ═══ IT COMPANIES NEARBY ═══ */
+        .companies-section { background: var(--dark-2); overflow: hidden; }
+        .companies-header { text-align: center; margin-bottom: 48px; }
+        .companies-header .section-label { justify-content: center; }
+        .companies-header .section-label::before { display: none; }
+        .companies-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 16px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .company-badge {
+            padding: 14px 28px;
+            border: 1px solid rgba(201,168,76,0.08);
+            background: var(--dark-3);
+            font-family: 'Inter', sans-serif;
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text-dim);
+            letter-spacing: 1px;
+            transition: all 0.3s;
+            text-transform: uppercase;
+        }
+        .company-badge:hover {
+            border-color: rgba(201,168,76,0.25);
+            color: var(--text);
+            background: rgba(201,168,76,0.05);
+        }
+
+        @media (max-width: 768px) {
+            .companies-section { padding: 48px 16px; }
+            .companies-grid {
+                flex-wrap: nowrap;
+                overflow-x: auto;
+                justify-content: flex-start;
+                gap: 10px;
+                padding-bottom: 10px;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none;
+            }
+            .companies-grid::-webkit-scrollbar { display: none; }
+            .company-badge { flex-shrink: 0; padding: 12px 20px; font-size: 0.72rem; }
+        }
+
+        /* ═══ VIDEO TOUR SECTION ═══ */
+        .video-section { background: var(--dark); }
+        .video-header { text-align: center; margin-bottom: 48px; }
+        .video-header .section-label { justify-content: center; }
+        .video-header .section-label::before { display: none; }
+        .video-container {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            border: 1px solid rgba(201,168,76,0.12);
+            overflow: hidden;
+            aspect-ratio: 16/9;
+            background: var(--dark-2);
+        }
+        .video-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.5);
+        }
+        .video-overlay {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+        }
+        .play-btn {
+            width: 72px;
+            height: 72px;
+            border-radius: 50%;
+            border: 2px solid var(--gold);
+            background: rgba(201,168,76,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .play-btn:hover { background: rgba(201,168,76,0.25); transform: scale(1.1); }
+        .play-btn svg { width: 28px; height: 28px; fill: var(--gold); margin-left: 4px; }
+        .video-cta-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1rem;
+            color: var(--gold-light);
+            letter-spacing: 2px;
+        }
+        .video-cta-link {
+            display: inline-block;
+            margin-top: 16px;
+            padding: 10px 24px;
+            font-size: 0.65rem;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: var(--gold);
+            border: 1px solid rgba(201,168,76,0.3);
+            text-decoration: none;
+            transition: all 0.3s;
+            font-family: 'Inter', sans-serif;
+        }
+        .video-cta-link:hover { background: var(--gold); color: var(--dark); }
+
+        @media (max-width: 768px) {
+            .video-section { padding: 64px 24px; }
+            .play-btn { width: 56px; height: 56px; }
+            .play-btn svg { width: 22px; height: 22px; }
+            .video-cta-text { font-size: 0.85rem; }
+        }
+
+        /* ═══ STICKY MOBILE CTA BAR ═══ */
+        .mobile-cta-bar {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 9996;
+            background: rgba(8,8,8,0.92);
+            backdrop-filter: blur(12px);
+            border-top: 1px solid rgba(201,168,76,0.15);
+            padding: 10px 12px;
+            transition: transform 0.3s ease;
+        }
+        .mobile-cta-bar.hidden { transform: translateY(100%); }
+        .mobile-cta-bar-inner {
+            display: flex;
+            gap: 8px;
+        }
+        .mobile-cta-btn {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            padding: 12px 8px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.65rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: all 0.3s;
+        }
+        .mobile-cta-btn svg { width: 16px; height: 16px; flex-shrink: 0; }
+        .mobile-cta-btn.call-btn {
+            background: var(--gold);
+            color: var(--dark);
+        }
+        .mobile-cta-btn.wa-btn {
+            background: #25d366;
+            color: #fff;
+        }
+        .mobile-cta-btn.dir-btn {
+            background: var(--dark-3);
+            color: var(--text);
+            border: 1px solid rgba(201,168,76,0.15);
+        }
+        .mobile-cta-btn.wa-btn svg { fill: #fff; }
+        .mobile-cta-btn.call-btn svg { fill: var(--dark); }
+        .mobile-cta-btn.dir-btn svg { fill: var(--gold); }
+
+        @media (max-width: 768px) {
+            .mobile-cta-bar { display: block; }
+            /* Adjust FABs and back-to-top to avoid overlap with bar */
+            .whatsapp-fab { bottom: 76px; right: 16px; }
+            .back-to-top { bottom: 76px; left: 16px; }
+            .chat-widget { right: 20px; bottom: 160px; }
+        }
+
+        /* ═══ MENU TOGGLE ANIMATION ═══ */
+        .menu-toggle span {
+            transition: all 0.3s ease;
+            transform-origin: center;
+        }
+        .menu-toggle.active span:nth-child(1) {
+            transform: translateY(7px) rotate(45deg);
+        }
+        .menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+            transform: scaleX(0);
+        }
+        .menu-toggle.active span:nth-child(3) {
+            transform: translateY(-7px) rotate(-45deg);
+        }
+
+        /* ═══ SECTION DIVIDERS ═══ */
+        .section-divider {
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(201,168,76,0.15), transparent);
+            position: relative;
+        }
+        .section-divider::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: -2px;
+            width: 40px;
+            height: 5px;
+            background: var(--gold);
+            transform: translateX(-50%);
+            opacity: 0.2;
+        }
+
+        /* ═══ ROOM CARD GLOW HOVER ═══ */
+        .room-card { transition: all 0.4s ease; }
+        .room-card:hover {
+            box-shadow: 0 0 30px rgba(201,168,76,0.08), 0 10px 40px rgba(0,0,0,0.3);
+        }
+
+        /* ═══ STAGGERED REVEAL ═══ */
+        .amenity.reveal.visible { animation: fadeInUp 0.5s ease forwards; }
+        .amenity:nth-child(1).reveal.visible { animation-delay: 0s; }
+        .amenity:nth-child(2).reveal.visible { animation-delay: 0.05s; }
+        .amenity:nth-child(3).reveal.visible { animation-delay: 0.1s; }
+        .amenity:nth-child(4).reveal.visible { animation-delay: 0.15s; }
+        .amenity:nth-child(5).reveal.visible { animation-delay: 0.2s; }
+        .amenity:nth-child(6).reveal.visible { animation-delay: 0.25s; }
+        .amenity:nth-child(7).reveal.visible { animation-delay: 0.3s; }
+        .amenity:nth-child(8).reveal.visible { animation-delay: 0.35s; }
+        .amenity:nth-child(9).reveal.visible { animation-delay: 0.4s; }
+        .amenity:nth-child(10).reveal.visible { animation-delay: 0.45s; }
+        .amenity:nth-child(11).reveal.visible { animation-delay: 0.5s; }
+        .amenity:nth-child(12).reveal.visible { animation-delay: 0.55s; }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ═══ MOBILE NAV BOOK NOW ═══ */
+        .nav-links .mobile-book-btn {
+            display: none;
+        }
+        @media (max-width: 768px) {
+            .nav-links.open .mobile-book-btn {
+                display: block;
+                margin-top: 12px;
+                padding: 14px 40px;
+                background: var(--gold);
+                color: var(--dark);
+                font-size: 0.7rem;
+                letter-spacing: 2.5px;
+                text-transform: uppercase;
+                text-decoration: none;
+                font-weight: 700;
+                font-family: 'Inter', sans-serif;
+                transition: background 0.3s;
+            }
+            .nav-links.open .mobile-book-btn:hover { background: var(--gold-light); }
+            /* Increase gallery height on mobile */
+            .gallery-item { height: 180px; }
+        }
+
+        @media (max-width: 400px) {
+            .gallery-item { height: 150px; }
+        }
+
     </style>
 </head>
 <body>
@@ -1946,9 +2426,10 @@
         <li><a href="#amenities">Amenities</a></li>
         <li><a href="#rooms">Rooms</a></li>
         <li><a href="#location">Location</a></li>
+        <li><a href="#contact" class="mobile-book-btn">Book Now</a></li>
     </ul>
     <button class="nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Book Now</button>
-    <div class="menu-toggle" id="menuToggle" onclick="document.getElementById('navLinks').classList.toggle('open')">
+    <div class="menu-toggle" id="menuToggle" onclick="document.getElementById('navLinks').classList.toggle('open'); this.classList.toggle('active')">
         <span></span><span></span><span></span>
     </div>
 </nav>
@@ -1967,6 +2448,12 @@
             <a href="#rooms" class="btn-primary">Explore Rooms</a>
             <a href="https://maps.app.goo.gl/fpicdZjBqRnnfHiMA" target="_blank" class="btn-outline">Get Directions</a>
         </div>
+        <div class="trust-badge">
+            <a href="https://maps.app.goo.gl/fpicdZjBqRnnfHiMA" target="_blank">
+                <span class="trust-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                <span class="trust-text"><strong>4.8</strong> on Google &middot; 50+ Reviews</span>
+            </a>
+        </div>
     </div>
     <div class="hero-strip">
         <div class="hero-strip-img"><img src="photos/room.png" alt="Room"></div>
@@ -1982,7 +2469,7 @@
 <!-- Stats Bar -->
 <div class="stats-bar">
     <div class="stat reveal">
-        <div class="stat-number" data-count="50">0</div>
+        <div class="stat-number" data-count="50">0+</div>
         <div class="stat-label">Happy Residents</div>
     </div>
     <div class="stat reveal">
@@ -2004,13 +2491,13 @@
     <div class="about-section">
         <div class="about-images reveal-left">
             <div class="about-img-main">
-                <img src="photos/room.png" alt="Premium Room at Shri Datta Sai PG">
+                <img src="photos/room.png" alt="Premium Room at Shri Datta Sai PG" loading="lazy">
             </div>
             <div class="about-img-accent">
                 <img src="photos/logo.jpg" alt="SDS">
             </div>
             <div class="about-img-secondary">
-                <img src="photos/lift.png" alt="Premium Elevator">
+                <img src="photos/lift.png" alt="Premium Elevator" loading="lazy">
             </div>
         </div>
         <div class="about-text reveal-right">
@@ -2036,7 +2523,43 @@
     </div>
 </section>
 
+<!-- Why Choose Us -->
+<div class="section-divider"></div>
+<section class="compare-section">
+    <div class="compare-header reveal">
+        <div class="section-label">Why Choose Us</div>
+        <h2 class="section-title">Typical PG vs Shri Datta Sai</h2>
+        <div class="gold-divider" style="margin: 20px auto;"></div>
+        <p class="section-desc">See why 50+ professionals chose us over every other PG in Hinjawadi.</p>
+    </div>
+    <div class="compare-grid reveal">
+        <div class="compare-col">
+            <div class="compare-col-header">Typical PG</div>
+            <div class="compare-row"><span class="compare-icon no">&#10007;</span> No elevator — climb stairs</div>
+            <div class="compare-row"><span class="compare-icon no">&#10007;</span> No meals or paid extra</div>
+            <div class="compare-row"><span class="compare-icon no">&#10007;</span> Basic lobby & corridors</div>
+            <div class="compare-row"><span class="compare-icon no">&#10007;</span> CCTV maybe, maybe not</div>
+            <div class="compare-row"><span class="compare-icon no">&#10007;</span> Shared/slow WiFi</div>
+            <div class="compare-row"><span class="compare-icon no">&#10007;</span> No daily cleaning</div>
+            <div class="compare-row"><span class="compare-icon no">&#10007;</span> No power backup</div>
+            <div class="compare-row"><span class="compare-icon no">&#10007;</span> No water dispenser</div>
+        </div>
+        <div class="compare-col">
+            <div class="compare-col-header">Shri Datta Sai PG</div>
+            <div class="compare-row"><span class="compare-icon yes">&#10003;</span> Modern elevator — all floors</div>
+            <div class="compare-row"><span class="compare-icon yes">&#10003;</span> 3 home-cooked meals daily</div>
+            <div class="compare-row"><span class="compare-icon yes">&#10003;</span> Marble lobby & gold trim</div>
+            <div class="compare-row"><span class="compare-icon yes">&#10003;</span> 24/7 CCTV surveillance</div>
+            <div class="compare-row"><span class="compare-icon yes">&#10003;</span> High-speed WiFi every room</div>
+            <div class="compare-row"><span class="compare-icon yes">&#10003;</span> Professional daily cleaning</div>
+            <div class="compare-row"><span class="compare-icon yes">&#10003;</span> Full power backup</div>
+            <div class="compare-row"><span class="compare-icon yes">&#10003;</span> Hot/cold dispenser every floor</div>
+        </div>
+    </div>
+</section>
+
 <!-- Photo Gallery -->
+<div class="section-divider"></div>
 <section id="gallery" class="gallery-section">
     <div class="gallery-header reveal">
         <div class="section-label">Gallery</div>
@@ -2046,36 +2569,57 @@
     </div>
     <div class="gallery-grid">
         <div class="gallery-item reveal" onclick="openLightbox(0)">
-            <img src="photos/room.png" alt="Premium Double Room">
+            <img src="photos/room.png" alt="Premium Double Room" loading="lazy">
             <span class="gallery-label">Premium Room</span>
         </div>
         <div class="gallery-item reveal" onclick="openLightbox(1)">
-            <img src="photos/corridor.png" alt="Corridor">
+            <img src="photos/corridor.png" alt="Marble Corridor at Shri Datta Sai PG Hinjawadi" loading="lazy">
             <span class="gallery-label">Corridor</span>
         </div>
         <div class="gallery-item reveal" onclick="openLightbox(2)">
-            <img src="photos/lift.png" alt="Gold Elevator">
+            <img src="photos/lift.png" alt="Gold-trimmed Elevator at Shri Datta Sai PG" loading="lazy">
             <span class="gallery-label">Elevator</span>
         </div>
         <div class="gallery-item reveal" onclick="openLightbox(3)">
-            <img src="photos/room2.png" alt="Room with Lamps">
+            <img src="photos/room2.png" alt="Double Sharing Room with Lamps" loading="lazy">
             <span class="gallery-label">Cozy Room</span>
         </div>
         <div class="gallery-item reveal" onclick="openLightbox(4)">
-            <img src="photos/room3.png" alt="Room with Attached Bath">
+            <img src="photos/room3.png" alt="Room with Attached Bathroom" loading="lazy">
             <span class="gallery-label">Room View</span>
         </div>
         <div class="gallery-item reveal" onclick="openLightbox(5)">
-            <img src="photos/furniture.png" alt="Study Desk">
+            <img src="photos/furniture.png" alt="Study Desk and Furniture" loading="lazy">
             <span class="gallery-label">Study Desk</span>
         </div>
         <div class="gallery-item reveal" onclick="openLightbox(6)">
-            <img src="photos/lift1.png" alt="Elevator Detail">
+            <img src="photos/lift1.png" alt="Elevator Interior Detail" loading="lazy">
             <span class="gallery-label">Elevator Detail</span>
         </div>
         <div class="gallery-item reveal" onclick="openLightbox(7)">
-            <img src="photos/washroom.png" alt="Clean Washroom">
+            <img src="photos/washroom.png" alt="Clean Modern Washroom" loading="lazy">
             <span class="gallery-label">Washroom</span>
+        </div>
+    </div>
+</section>
+
+<!-- Video Tour -->
+<div class="section-divider"></div>
+<section class="video-section">
+    <div class="video-header reveal">
+        <div class="section-label">Virtual Tour</div>
+        <h2 class="section-title">See It Before You Visit</h2>
+        <div class="gold-divider" style="margin: 20px auto;"></div>
+        <p class="section-desc">Get a feel of the space from wherever you are.</p>
+    </div>
+    <div class="video-container reveal">
+        <img src="photos/corridor.png" alt="Virtual Tour of Shri Datta Sai PG" loading="lazy">
+        <div class="video-overlay">
+            <div class="play-btn">
+                <svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg>
+            </div>
+            <span class="video-cta-text">Video Coming Soon</span>
+            <a href="https://wa.me/917875668666?text=Hi%2C%20I%27d%20like%20to%20schedule%20a%20virtual%20tour" target="_blank" class="video-cta-link">Schedule a Virtual Tour</a>
         </div>
     </div>
 </section>
@@ -2083,7 +2627,7 @@
 <!-- Premium Highlight — Elevator -->
 <div class="highlight-section">
     <div class="highlight-image reveal-left">
-        <img src="photos/lift.png" alt="Gold-trimmed Elevator at Shri Datta Sai PG">
+        <img src="photos/lift.png" alt="Gold-trimmed Elevator at Shri Datta Sai PG" loading="lazy">
     </div>
     <div class="highlight-text reveal-right">
         <div class="section-label">Premium Feature</div>
@@ -2192,7 +2736,7 @@
         <!-- Double Sharing -->
         <div class="room-card reveal">
             <div class="room-visual">
-                <img src="photos/room1.png" alt="Double Sharing Room">
+                <img src="photos/room1.png" alt="Double Sharing Room" loading="lazy">
             </div>
             <div class="room-details">
                 <h3 class="room-type">Double Sharing</h3>
@@ -2217,7 +2761,7 @@
         <div class="room-card featured reveal">
             <div class="room-badge">Popular</div>
             <div class="room-visual">
-                <img src="photos/room.png" alt="Single Occupancy Room">
+                <img src="photos/room.png" alt="Single Occupancy Room" loading="lazy">
             </div>
             <div class="room-details">
                 <h3 class="room-type">Single Occupancy</h3>
@@ -2245,7 +2789,38 @@
     </div>
 </section>
 
+<!-- Move-In Process -->
+<div class="section-divider"></div>
+<section class="process-section">
+    <div class="process-header reveal">
+        <div class="section-label">How It Works</div>
+        <h2 class="section-title">Move In, In 3 Simple Steps</h2>
+        <div class="gold-divider" style="margin: 20px auto;"></div>
+    </div>
+    <div class="process-steps">
+        <div class="process-step reveal">
+            <div class="step-number">1</div>
+            <div class="step-icon">🏠</div>
+            <div class="step-title">Visit & Tour</div>
+            <div class="step-desc">Call us or walk in for a free property tour. See the rooms, lobby, and amenities yourself.</div>
+        </div>
+        <div class="process-step reveal">
+            <div class="step-number">2</div>
+            <div class="step-icon">📝</div>
+            <div class="step-title">Book Your Room</div>
+            <div class="step-desc">Pick your room type, pay the security deposit, and sign a simple agreement.</div>
+        </div>
+        <div class="process-step reveal">
+            <div class="step-number">3</div>
+            <div class="step-icon">🎉</div>
+            <div class="step-title">Move In</div>
+            <div class="step-desc">Bring your bags — your bed, meals, WiFi, and clean room are ready from day one.</div>
+        </div>
+    </div>
+</section>
+
 <!-- Location -->
+<div class="section-divider"></div>
 <section id="location" class="location-section">
     <div class="location-grid">
         <div class="location-info reveal-left">
@@ -2279,7 +2854,29 @@
     </div>
 </section>
 
+<!-- Nearby IT Companies -->
+<div class="section-divider"></div>
+<section class="companies-section">
+    <div class="companies-header reveal">
+        <div class="section-label">Your Neighbors</div>
+        <h2 class="section-title">Minutes From Your Office</h2>
+        <div class="gold-divider" style="margin: 20px auto;"></div>
+        <p class="section-desc">Located in the heart of Hinjawadi's IT corridor — your commute stays short.</p>
+    </div>
+    <div class="companies-grid">
+        <div class="company-badge reveal">Infosys</div>
+        <div class="company-badge reveal">Wipro</div>
+        <div class="company-badge reveal">TCS</div>
+        <div class="company-badge reveal">Cognizant</div>
+        <div class="company-badge reveal">IBM</div>
+        <div class="company-badge reveal">Persistent</div>
+        <div class="company-badge reveal">Tech Mahindra</div>
+        <div class="company-badge reveal">Accenture</div>
+    </div>
+</section>
+
 <!-- Testimonials -->
+<div class="section-divider"></div>
 <section class="testimonials-section">
     <div class="testimonials-header reveal">
         <div class="section-label">Reviews</div>
@@ -2375,6 +2972,26 @@
     </div>
 </section>
 
+
+<!-- Chat Widget -->
+<div class="chat-widget">
+    <button class="chat-btn" onclick="toggleChat()">💬</button>
+    <div class="chat-window" id="chatWindow">
+        <div class="chat-header">
+            <h3>SDS Assistant</h3>
+            <button class="chat-close" onclick="toggleChat()">&#x2715;</button>
+        </div>
+        <div class="chat-body" id="chatBody">
+            <div class="chat-msg bot">Hi! I'm the virtual assistant for Shri Datta Sai PG. Got any questions about rooms, rent, or amenities?</div>
+        </div>
+        <div class="typing-indicator" id="typingIndicator">Agent is typing...</div>
+        <div class="chat-input-area">
+            <input type="text" id="chatInput" class="chat-input" placeholder="Ask a question...">
+            <button class="chat-send" onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+</div>
+
 <!-- WhatsApp FAB -->
 <a href="https://wa.me/917875668666?text=Hi%2C%20I%27m%20interested%20in%20a%20room%20at%20Shri%20Datta%20Sai%20PG" target="_blank" class="whatsapp-fab" aria-label="Chat on WhatsApp">
     <div class="fab-pulse"></div>
@@ -2383,6 +3000,24 @@
 
 <!-- Back to Top -->
 <a href="#hero" class="back-to-top" id="backToTop" aria-label="Back to top">&#8593;</a>
+
+<!-- Mobile CTA Bar -->
+<div class="mobile-cta-bar" id="mobileCta">
+    <div class="mobile-cta-bar-inner">
+        <a href="tel:+917875668666" class="mobile-cta-btn call-btn">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+            Call Now
+        </a>
+        <a href="https://wa.me/917875668666?text=Hi%2C%20I%27m%20interested%20in%20a%20room" target="_blank" class="mobile-cta-btn wa-btn">
+            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            WhatsApp
+        </a>
+        <a href="https://maps.app.goo.gl/fpicdZjBqRnnfHiMA" target="_blank" class="mobile-cta-btn dir-btn">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+            Directions
+        </a>
+    </div>
+</div>
 
 <!-- CTA Section -->
 <section id="contact" class="cta-section">
@@ -2448,7 +3083,7 @@
     window.addEventListener('load', () => {
         setTimeout(() => {
             document.getElementById('loader').classList.add('hidden');
-        }, 2000);
+        }, 800);
     });
 
     // ═══ CURSOR GLOW ═══
@@ -2508,6 +3143,7 @@
             const target = document.querySelector(a.getAttribute('href'));
             if (target) target.scrollIntoView({ behavior: 'smooth' });
             document.getElementById('navLinks').classList.remove('open');
+            document.getElementById('menuToggle').classList.remove('active');
         });
     });
 
@@ -2547,11 +3183,103 @@
         if (e.key === 'ArrowRight') navLightbox(1);
     });
 
+
+    // ═══ CHATBOT ═══
+    function toggleChat() {
+        document.getElementById('chatWindow').classList.toggle('open');
+    }
+
+    async function sendMessage() {
+        const input = document.getElementById('chatInput');
+        const text = input.value.trim();
+        if(!text) return;
+        
+        appendMessage(text, 'user');
+        input.value = '';
+        
+        const typing = document.getElementById('typingIndicator');
+        typing.style.display = 'block';
+        
+        try {
+            const response = await fetch('/api/chat', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({message: text})
+            });
+            const data = await response.json();
+            typing.style.display = 'none';
+            appendMessage(data.reply, 'bot');
+        } catch (e) {
+            typing.style.display = 'none';
+            appendMessage("Sorry, I'm offline right now! Please click the green WhatsApp button to talk to us.", 'bot');
+        }
+    }
+
+    function appendMessage(text, sender) {
+        const body = document.getElementById('chatBody');
+        const msg = document.createElement('div');
+        msg.className = `chat-msg ${sender}`;
+        msg.textContent = text;
+        body.appendChild(msg);
+        body.scrollTop = body.scrollHeight;
+    }
+
+    document.getElementById('chatInput').addEventListener('keypress', function (e) {
+        if (e.key === 'Enter') sendMessage();
+    });
+
     // ═══ BACK TO TOP ═══
     const btt = document.getElementById('backToTop');
     window.addEventListener('scroll', () => {
         btt.classList.toggle('visible', window.scrollY > 600);
     });
+
+    // ═══ MOBILE CTA BAR — SMART HIDE ═══
+    const mobileCta = document.getElementById('mobileCta');
+    if (mobileCta) {
+        let lastScrollY = 0;
+        let ctaVisible = true;
+        window.addEventListener('scroll', () => {
+            const currentY = window.scrollY;
+            if (currentY > lastScrollY && currentY > 300 && ctaVisible) {
+                mobileCta.classList.add('hidden');
+                ctaVisible = false;
+            } else if (currentY < lastScrollY && !ctaVisible) {
+                mobileCta.classList.remove('hidden');
+                ctaVisible = true;
+            }
+            lastScrollY = currentY;
+        }, { passive: true });
+    }
+
+    // ═══ LIGHTBOX SWIPE SUPPORT ═══
+    (function() {
+        const lightboxEl = document.getElementById('lightbox');
+        let touchStartX = 0;
+        let touchEndX = 0;
+        lightboxEl.addEventListener('touchstart', e => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+        lightboxEl.addEventListener('touchend', e => {
+            touchEndX = e.changedTouches[0].screenX;
+            const diff = touchStartX - touchEndX;
+            if (Math.abs(diff) > 50) {
+                if (diff > 0) navLightbox(1);
+                else navLightbox(-1);
+            }
+        }, { passive: true });
+    })();
+
+    // ═══ PARALLAX HERO (subtle) ═══
+    const heroBg = document.querySelector('.hero-bg img');
+    if (heroBg && window.innerWidth > 768) {
+        window.addEventListener('scroll', () => {
+            const scrolled = window.scrollY;
+            if (scrolled < window.innerHeight) {
+                heroBg.style.transform = `scale(1.05) translateY(${scrolled * 0.15}px)`;
+            }
+        }, { passive: true });
+    }
 </script>
 
 </body>
