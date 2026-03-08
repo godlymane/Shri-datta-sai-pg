@@ -2504,6 +2504,324 @@
             .gallery-item { height: 150px; }
         }
 
+        /* ═══════════════════════════════════════
+           GLASSMORPHIC IN-PAGE INTERACTIONS
+           ═══════════════════════════════════════ */
+
+        /* Shared backdrop overlay */
+        .glass-backdrop {
+            position: fixed;
+            inset: 0;
+            z-index: 9997;
+            background: rgba(0,0,0,0.55);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+        .glass-backdrop.active { opacity: 1; visibility: visible; }
+
+        /* ── Amenity Detail Bottom Sheet ── */
+        .amenity-sheet {
+            position: fixed;
+            bottom: 0; left: 0; right: 0;
+            z-index: 9998;
+            max-height: 72vh;
+            background: rgba(16,16,16,0.92);
+            backdrop-filter: blur(28px) saturate(1.5);
+            -webkit-backdrop-filter: blur(28px) saturate(1.5);
+            border-top: 1px solid rgba(201,168,76,0.15);
+            border-radius: 24px 24px 0 0;
+            padding: 0 28px 36px;
+            transform: translateY(100%);
+            transition: transform 0.45s cubic-bezier(0.32,0.72,0,1);
+            overflow-y: auto;
+            overscroll-behavior: contain;
+            -webkit-overflow-scrolling: touch;
+        }
+        .amenity-sheet.active { transform: translateY(0); }
+        .amenity-sheet-handle {
+            width: 40px; height: 4px;
+            background: rgba(201,168,76,0.35);
+            border-radius: 2px;
+            margin: 14px auto 24px;
+        }
+        .amenity-sheet-close {
+            position: absolute; top: 16px; right: 20px;
+            width: 34px; height: 34px; border-radius: 50%;
+            background: rgba(201,168,76,0.1);
+            border: 1px solid rgba(201,168,76,0.15);
+            color: var(--gold); font-size: 1.1rem;
+            cursor: pointer;
+            display: flex; align-items: center; justify-content: center;
+            transition: background 0.2s;
+        }
+        .amenity-sheet-close:hover { background: rgba(201,168,76,0.22); }
+        .amenity-sheet-icon { font-size: 3rem; margin-bottom: 6px; display: block; }
+        .amenity-sheet-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem; color: var(--gold);
+            margin-bottom: 6px;
+        }
+        .amenity-sheet-subtitle {
+            font-size: 0.82rem; color: var(--text-muted);
+            letter-spacing: 1.5px; text-transform: uppercase;
+            margin-bottom: 16px; font-family: 'Inter', sans-serif;
+        }
+        .amenity-sheet-desc {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem; color: var(--text-dim);
+            line-height: 1.75; margin-bottom: 20px;
+        }
+        .amenity-sheet-highlights {
+            list-style: none; padding: 0; margin: 0 0 24px;
+        }
+        .amenity-sheet-highlights li {
+            padding: 11px 0;
+            border-bottom: 1px solid rgba(201,168,76,0.07);
+            color: var(--text); font-size: 0.9rem;
+            display: flex; align-items: center; gap: 10px;
+        }
+        .amenity-sheet-highlights li::before {
+            content: '✓'; color: var(--gold); font-weight: 700; flex-shrink: 0;
+        }
+        .amenity-sheet-cta {
+            display: block; text-align: center;
+            padding: 14px; border-radius: 12px;
+            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+            color: var(--dark); font-weight: 700;
+            text-decoration: none; font-size: 0.85rem;
+            letter-spacing: 1px; text-transform: uppercase;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .amenity-sheet-cta:active { transform: scale(0.97); }
+
+        /* Amenity card tap state */
+        .amenity { cursor: pointer; transition: transform 0.22s ease, box-shadow 0.22s ease; }
+        .amenity:active { transform: scale(0.96); }
+        .amenity::after {
+            content: 'Tap for details';
+            display: block; font-size: 0.65rem;
+            color: var(--text-muted); margin-top: 6px;
+            opacity: 0.5; letter-spacing: 0.5px;
+        }
+
+        /* ── Room Quick-View Overlay ── */
+        .room-overlay {
+            position: fixed; inset: 0;
+            z-index: 9998;
+            display: flex; align-items: flex-end; justify-content: center;
+            pointer-events: none;
+            opacity: 0; visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+        .room-overlay.active { pointer-events: auto; opacity: 1; visibility: visible; }
+        .room-overlay-card {
+            position: relative;
+            width: 100%; max-width: 520px; max-height: 88vh;
+            background: rgba(16,16,16,0.94);
+            backdrop-filter: blur(30px) saturate(1.5);
+            -webkit-backdrop-filter: blur(30px) saturate(1.5);
+            border: 1px solid rgba(201,168,76,0.1);
+            border-radius: 24px 24px 0 0;
+            overflow-y: auto; overscroll-behavior: contain;
+            -webkit-overflow-scrolling: touch;
+            transform: translateY(100%);
+            transition: transform 0.45s cubic-bezier(0.32,0.72,0,1);
+        }
+        .room-overlay.active .room-overlay-card { transform: translateY(0); }
+        .room-overlay-handle {
+            width: 40px; height: 4px;
+            background: rgba(201,168,76,0.35);
+            border-radius: 2px; margin: 14px auto 0;
+        }
+        .room-overlay-img {
+            width: 100%; height: 230px; object-fit: cover; display: block;
+        }
+        .room-overlay-body { padding: 24px 24px 32px; }
+        .room-overlay-badge {
+            display: inline-block;
+            padding: 4px 12px; border-radius: 6px;
+            background: rgba(201,168,76,0.12);
+            color: var(--gold); font-size: 0.7rem;
+            letter-spacing: 1px; text-transform: uppercase;
+            font-weight: 600; margin-bottom: 10px;
+        }
+        .room-overlay-type {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem; color: var(--gold); margin-bottom: 4px;
+        }
+        .room-overlay-tagline {
+            color: var(--text-dim); font-size: 0.88rem; margin-bottom: 18px;
+        }
+        .room-overlay-price {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.4rem; color: var(--text); font-weight: 700;
+            margin-bottom: 20px; line-height: 1;
+        }
+        .room-overlay-price .period {
+            font-size: 0.85rem; color: var(--text-dim); font-weight: 400;
+        }
+        .room-overlay-features {
+            list-style: none; padding: 0; margin: 0 0 24px;
+        }
+        .room-overlay-features li {
+            padding: 9px 0;
+            border-bottom: 1px solid rgba(201,168,76,0.06);
+            color: var(--text); font-size: 0.88rem;
+            display: flex; align-items: center; gap: 10px;
+        }
+        .room-overlay-features li::before {
+            content: '✓'; color: var(--gold); font-weight: 700;
+        }
+        .room-overlay-deposit {
+            background: rgba(201,168,76,0.06);
+            border: 1px solid rgba(201,168,76,0.1);
+            border-radius: 10px; padding: 12px 16px;
+            font-size: 0.8rem; color: var(--text-dim);
+            margin-bottom: 20px; line-height: 1.6;
+        }
+        .room-overlay-actions {
+            display: flex; gap: 12px;
+        }
+        .room-overlay-actions a {
+            flex: 1; text-align: center; padding: 14px;
+            border-radius: 12px; font-size: 0.82rem;
+            font-weight: 700; text-decoration: none;
+            letter-spacing: 0.5px; transition: transform 0.2s;
+        }
+        .room-overlay-actions a:active { transform: scale(0.97); }
+        .room-overlay-wa { background: #25d366; color: #fff; }
+        .room-overlay-call {
+            background: rgba(201,168,76,0.12);
+            color: var(--gold); border: 1px solid rgba(201,168,76,0.2);
+        }
+        .room-overlay-close {
+            position: absolute; top: 14px; right: 14px;
+            width: 36px; height: 36px; border-radius: 50%;
+            background: rgba(0,0,0,0.5); backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: none; color: #fff; font-size: 1.2rem;
+            cursor: pointer; display: flex; align-items: center; justify-content: center;
+            z-index: 2; transition: background 0.2s;
+        }
+        .room-overlay-close:hover { background: rgba(0,0,0,0.7); }
+
+        /* Room card tap hint */
+        .room-card { cursor: pointer; }
+        .room-card:active { transform: scale(0.98) !important; }
+        .room-card .room-cta { pointer-events: none; }
+
+        /* ── Lightbox Counter & Caption ── */
+        .lightbox-counter {
+            position: absolute; top: 20px; left: 50%;
+            transform: translateX(-50%);
+            background: rgba(16,16,16,0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            padding: 6px 18px; border-radius: 20px;
+            color: var(--text); font-family: 'Inter', sans-serif;
+            font-size: 0.78rem; letter-spacing: 2px;
+            border: 1px solid rgba(201,168,76,0.1);
+            z-index: 2; pointer-events: none;
+        }
+        .lightbox-caption {
+            position: absolute; bottom: 24px; left: 50%;
+            transform: translateX(-50%);
+            background: rgba(16,16,16,0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            padding: 8px 22px; border-radius: 12px;
+            color: var(--text-dim); font-family: 'Inter', sans-serif;
+            font-size: 0.78rem; text-align: center;
+            max-width: 80%; border: 1px solid rgba(201,168,76,0.08);
+            z-index: 2; pointer-events: none;
+            white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+        }
+
+        /* ── Testimonial Expand ── */
+        .testimonial {
+            cursor: pointer;
+            transition: transform 0.22s ease, box-shadow 0.25s ease;
+        }
+        .testimonial:active { transform: scale(0.98); }
+        .testimonial-full {
+            max-height: 0; overflow: hidden;
+            transition: max-height 0.4s cubic-bezier(0.32,0.72,0,1), opacity 0.3s;
+            opacity: 0;
+            margin-top: 0; padding-top: 0;
+            border-top: 0px solid rgba(201,168,76,0.08);
+            color: var(--text-dim); font-size: 0.85rem; line-height: 1.75;
+        }
+        .testimonial.expanded .testimonial-full {
+            max-height: 300px; opacity: 1;
+            margin-top: 14px; padding-top: 14px;
+            border-top-width: 1px;
+        }
+        .testimonial-tap-hint {
+            font-size: 0.65rem; color: var(--text-muted);
+            text-align: center; margin-top: 10px;
+            opacity: 0.5; letter-spacing: 0.5px;
+            transition: opacity 0.3s;
+        }
+        .testimonial.expanded .testimonial-tap-hint { opacity: 0; height: 0; margin: 0; overflow: hidden; }
+
+        /* ── Company Badge Tooltip ── */
+        .company-badge {
+            cursor: pointer; position: relative;
+            transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+        }
+        .company-badge:active { transform: scale(0.95); }
+        .company-tooltip {
+            position: absolute;
+            bottom: calc(100% + 10px); left: 50%;
+            transform: translateX(-50%) scale(0.92);
+            background: rgba(16,16,16,0.94);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            border: 1px solid rgba(201,168,76,0.18);
+            border-radius: 10px; padding: 10px 16px;
+            white-space: nowrap; font-size: 0.75rem;
+            color: var(--text); font-family: 'Inter', sans-serif;
+            opacity: 0; visibility: hidden;
+            transition: opacity 0.25s, transform 0.25s, visibility 0.25s;
+            pointer-events: none; z-index: 20;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+        }
+        .company-tooltip::after {
+            content: ''; position: absolute;
+            top: 100%; left: 50%; transform: translateX(-50%);
+            border: 6px solid transparent;
+            border-top-color: rgba(201,168,76,0.18);
+        }
+        .company-tooltip .tooltip-time {
+            color: var(--gold); font-weight: 600;
+        }
+        .company-badge.show-tip .company-tooltip {
+            opacity: 1; visibility: visible;
+            transform: translateX(-50%) scale(1);
+        }
+
+        /* ── Desktop overlay tweaks ── */
+        @media (min-width: 769px) {
+            .amenity-sheet {
+                left: 50%; right: auto;
+                transform: translateX(-50%) translateY(100%);
+                max-width: 480px;
+            }
+            .amenity-sheet.active { transform: translateX(-50%) translateY(0); }
+            .room-overlay { align-items: center; }
+            .room-overlay-card {
+                border-radius: 24px; max-height: 82vh;
+            }
+            .room-overlay-img {
+                height: 300px; border-radius: 24px 24px 0 0;
+            }
+            .amenity::after { display: none; }
+            .testimonial-tap-hint { display: none; }
+        }
+
     </style>
 </head>
 <body>
@@ -2539,9 +2857,50 @@
 <!-- Lightbox -->
 <div class="lightbox" id="lightbox">
     <button class="lightbox-close" onclick="closeLightbox()">&#x2715;</button>
+    <div class="lightbox-counter" id="lightboxCounter">1 / 8</div>
     <div class="lightbox-nav lightbox-prev" onclick="navLightbox(-1)">&#8249;</div>
     <div class="lightbox-nav lightbox-next" onclick="navLightbox(1)">&#8250;</div>
     <img id="lightboxImg" src="" alt="Gallery Image">
+    <div class="lightbox-caption" id="lightboxCaption">Room View</div>
+</div>
+
+<!-- Glass Backdrop (shared) -->
+<div class="glass-backdrop" id="glassBackdrop"></div>
+
+<!-- Amenity Detail Sheet -->
+<div class="amenity-sheet" id="amenitySheet">
+    <div class="amenity-sheet-handle"></div>
+    <button class="amenity-sheet-close" onclick="closeAmenitySheet()">&#x2715;</button>
+    <span class="amenity-sheet-icon" id="asIcon"></span>
+    <div class="amenity-sheet-title" id="asTitle"></div>
+    <div class="amenity-sheet-subtitle" id="asSubtitle"></div>
+    <div class="amenity-sheet-desc" id="asDesc"></div>
+    <ul class="amenity-sheet-highlights" id="asHighlights"></ul>
+    <a href="https://wa.me/917875668666?text=Hi%2C%20I%20have%20a%20question%20about%20amenities" target="_blank" class="amenity-sheet-cta">Ask on WhatsApp</a>
+</div>
+
+<!-- Room Quick-View Overlay -->
+<div class="room-overlay" id="roomOverlay">
+    <div class="room-overlay-card">
+        <div class="room-overlay-handle"></div>
+        <button class="room-overlay-close" onclick="closeRoomOverlay()">&#x2715;</button>
+        <img class="room-overlay-img" id="roImg" src="" alt="">
+        <div class="room-overlay-body">
+            <div class="room-overlay-badge" id="roBadge"></div>
+            <div class="room-overlay-type" id="roType"></div>
+            <div class="room-overlay-tagline" id="roTagline"></div>
+            <div class="room-overlay-price" id="roPrice"></div>
+            <ul class="room-overlay-features" id="roFeatures"></ul>
+            <div class="room-overlay-deposit">
+                <strong>Security Deposit:</strong> &#8377;3,000 (&#8377;1,000 maintenance deducted)<br>
+                <strong>Lock-in:</strong> 30 days &bull; <strong>No hidden charges</strong>
+            </div>
+            <div class="room-overlay-actions">
+                <a href="https://wa.me/917875668666?text=Hi%2C%20I%27d%20like%20to%20book%20a%20room" target="_blank" class="room-overlay-wa">Book on WhatsApp</a>
+                <a href="tel:+917875668666" class="room-overlay-call">Call Now</a>
+            </div>
+        </div>
+    </div>
 </div>
 
 <!-- Navigation -->
@@ -2790,62 +3149,62 @@
         <p class="section-desc">Every detail is designed to make your stay effortless.</p>
     </div>
     <div class="amenities-grid">
-        <div class="amenity reveal">
+        <div class="amenity reveal" data-amenity="meals">
             <span class="amenity-icon">🍽️</span>
             <h4>3x Homely Meals</h4>
             <p>Breakfast, lunch & dinner — fresh home-cooked food daily</p>
         </div>
-        <div class="amenity reveal">
+        <div class="amenity reveal" data-amenity="wifi">
             <span class="amenity-icon">📶</span>
             <h4>WiFi in Every Room</h4>
             <p>High-speed internet for work & entertainment</p>
         </div>
-        <div class="amenity reveal">
+        <div class="amenity reveal" data-amenity="cctv">
             <span class="amenity-icon">📹</span>
             <h4>24/7 CCTV</h4>
             <p>Round-the-clock surveillance for your safety</p>
         </div>
-        <div class="amenity reveal">
+        <div class="amenity reveal" data-amenity="laundry">
             <span class="amenity-icon">👕</span>
             <h4>Washing Machine</h4>
             <p>In-house laundry facilities available</p>
         </div>
-        <div class="amenity reveal">
+        <div class="amenity reveal" data-amenity="fridge">
             <span class="amenity-icon">🧊</span>
             <h4>Fridge & Dispenser</h4>
             <p>Refrigerator + hot/cold water on every floor</p>
         </div>
-        <div class="amenity reveal">
+        <div class="amenity reveal" data-amenity="cooking">
             <span class="amenity-icon">🔥</span>
             <h4>Self-Cooking Gas</h4>
             <p>Cook your own meals whenever you want</p>
         </div>
-        <div class="amenity reveal">
+        <div class="amenity reveal" data-amenity="water">
             <span class="amenity-icon">🚿</span>
             <h4>Hot & Cold Water</h4>
             <p>24/7 hot and cold water supply</p>
         </div>
-        <div class="amenity reveal">
+        <div class="amenity reveal" data-amenity="power">
             <span class="amenity-icon">⚡</span>
             <h4>Power Backup</h4>
             <p>Uninterrupted power — zero downtime</p>
         </div>
-        <div class="amenity reveal">
+        <div class="amenity reveal" data-amenity="parking">
             <span class="amenity-icon">🏍️</span>
             <h4>2-Wheeler Parking</h4>
             <p>Secure parking for your vehicle</p>
         </div>
-        <div class="amenity reveal">
+        <div class="amenity reveal" data-amenity="cleaning">
             <span class="amenity-icon">🧹</span>
             <h4>Daily Cleaning</h4>
             <p>Professional housekeeping every day</p>
         </div>
-        <div class="amenity reveal">
+        <div class="amenity reveal" data-amenity="elevator">
             <span class="amenity-icon">🛗</span>
             <h4>Elevator Access</h4>
             <p>Modern elevator — no more stairs</p>
         </div>
-        <div class="amenity reveal">
+        <div class="amenity reveal" data-amenity="community">
             <span class="amenity-icon">🏠</span>
             <h4>Homely Vibe</h4>
             <p>A community that feels like family</p>
@@ -2994,14 +3353,14 @@
         <p class="section-desc">Located in the heart of Hinjawadi's IT corridor — your commute stays short.</p>
     </div>
     <div class="companies-grid">
-        <div class="company-badge reveal">Infosys</div>
-        <div class="company-badge reveal">Wipro</div>
-        <div class="company-badge reveal">TCS</div>
-        <div class="company-badge reveal">Cognizant</div>
-        <div class="company-badge reveal">IBM</div>
-        <div class="company-badge reveal">Persistent</div>
-        <div class="company-badge reveal">Tech Mahindra</div>
-        <div class="company-badge reveal">Accenture</div>
+        <div class="company-badge reveal" data-dist="5 min drive">Infosys<span class="company-tooltip"><span class="tooltip-time">~5 min</span> drive from PG</span></div>
+        <div class="company-badge reveal" data-dist="7 min drive">Wipro<span class="company-tooltip"><span class="tooltip-time">~7 min</span> drive from PG</span></div>
+        <div class="company-badge reveal" data-dist="8 min drive">TCS<span class="company-tooltip"><span class="tooltip-time">~8 min</span> drive from PG</span></div>
+        <div class="company-badge reveal" data-dist="6 min drive">Cognizant<span class="company-tooltip"><span class="tooltip-time">~6 min</span> drive from PG</span></div>
+        <div class="company-badge reveal" data-dist="10 min drive">IBM<span class="company-tooltip"><span class="tooltip-time">~10 min</span> drive from PG</span></div>
+        <div class="company-badge reveal" data-dist="8 min drive">Persistent<span class="company-tooltip"><span class="tooltip-time">~8 min</span> drive from PG</span></div>
+        <div class="company-badge reveal" data-dist="12 min drive">Tech Mahindra<span class="company-tooltip"><span class="tooltip-time">~12 min</span> drive from PG</span></div>
+        <div class="company-badge reveal" data-dist="9 min drive">Accenture<span class="company-tooltip"><span class="tooltip-time">~9 min</span> drive from PG</span></div>
     </div>
 </section>
 
@@ -3014,23 +3373,29 @@
         <div class="gold-divider" style="margin: 20px auto;"></div>
     </div>
     <div class="testimonial-grid">
-        <div class="testimonial reveal">
+        <div class="testimonial reveal" onclick="this.classList.toggle('expanded')">
             <div class="testimonial-stars">&#9733; &#9733; &#9733; &#9733; &#9733;</div>
             <p>"The food is genuinely home-cooked. After a long day at work, coming back to a hot meal and a clean room makes all the difference."</p>
+            <div class="testimonial-full">I've been living here for 8 months now. The breakfast variety is great — poha, upma, parathas, and even dosas on weekends. Lunch and dinner are proper homestyle meals. The cleaning staff comes every morning without fail. Compared to my previous PG in Wakad, this is a massive upgrade. The owner is very responsive on WhatsApp whenever there's an issue.</div>
             <div class="testimonial-author">Rahul K.</div>
             <div class="testimonial-role">Software Engineer, Infosys</div>
+            <div class="testimonial-tap-hint">Tap to read more</div>
         </div>
-        <div class="testimonial reveal">
+        <div class="testimonial reveal" onclick="this.classList.toggle('expanded')">
             <div class="testimonial-stars">&#9733; &#9733; &#9733; &#9733; &#9733;</div>
             <p>"Best PG in Hinjawadi. WiFi works perfectly, rooms are cleaned daily, and the elevator is such a luxury. Highly recommend."</p>
+            <div class="testimonial-full">I work from home 3 days a week and the WiFi has never let me down — even during peak hours. The elevator is a huge plus since I'm on the 4th floor. Daily cleaning means I never have to worry about maintaining the room. The marble corridors genuinely look premium. If you're looking for a PG that doesn't feel like a PG, this is it.</div>
             <div class="testimonial-author">Priya M.</div>
             <div class="testimonial-role">Data Analyst, Wipro</div>
+            <div class="testimonial-tap-hint">Tap to read more</div>
         </div>
-        <div class="testimonial reveal">
+        <div class="testimonial reveal" onclick="this.classList.toggle('expanded')">
             <div class="testimonial-stars">&#9733; &#9733; &#9733; &#9733; &#9733;</div>
             <p>"Moved in 6 months ago and never looked back. The corridor and lobby feel like a hotel, not a PG. Owner genuinely cares."</p>
+            <div class="testimonial-full">What sold me was the property tour — the marble lobby and CCTV coverage made me feel safe from day one. The hot water is available 24/7 which is rare in Hinjawadi PGs. The cooking gas facility is a bonus for weekends when you want to make something yourself. The community here is great too — most residents are IT professionals so it's easy to connect. Absolutely worth the price.</div>
             <div class="testimonial-author">Amit S.</div>
             <div class="testimonial-role">DevOps Engineer, TCS</div>
+            <div class="testimonial-tap-hint">Tap to read more</div>
         </div>
     </div>
 </section>
@@ -3410,6 +3775,275 @@
             }
         }, { passive: true });
     }
+
+    // ═══════════════════════════════════════
+    // GLASSMORPHIC IN-PAGE INTERACTIONS
+    // ═══════════════════════════════════════
+
+    const glassBackdrop = document.getElementById('glassBackdrop');
+
+    // ── AMENITY DETAIL SHEET ──
+    const amenityData = {
+        meals: {
+            icon: '🍽️', title: '3x Homely Meals', subtitle: 'Food & Nutrition',
+            desc: 'Enjoy three freshly prepared home-cooked meals every day. Our kitchen serves wholesome, hygienically prepared Indian food that reminds you of home.',
+            highlights: ['Breakfast: Poha, Upma, Parathas, Dosas, Idli & more', 'Lunch: Full thali with roti, rice, sabzi, dal & salad', 'Dinner: Rotating menu with comfort food favorites', 'Weekend specials: Biryani, Chole Bhature, Pav Bhaji', 'No extra charges — all included in rent', 'Flexible timing for working professionals']
+        },
+        wifi: {
+            icon: '📶', title: 'WiFi in Every Room', subtitle: 'Connectivity',
+            desc: 'Stay connected with high-speed broadband WiFi available in every room. Perfect for work-from-home, video calls, streaming, and gaming.',
+            highlights: ['High-speed broadband in every room', 'Reliable for video conferencing & WFH', 'Seamless streaming and downloads', 'Dedicated bandwidth — not shared with 50 people', 'Router maintenance handled by us', 'Zero downtime guarantee']
+        },
+        cctv: {
+            icon: '📹', title: '24/7 CCTV Surveillance', subtitle: 'Security',
+            desc: 'Your safety is our top priority. Multi-camera CCTV coverage monitors all common areas round the clock, with footage stored for 30 days.',
+            highlights: ['HD cameras covering all corridors & entry points', 'Lobby and parking area monitored 24/7', '30-day footage retention', 'Night vision enabled cameras', 'Digital access control at main gate', 'Emergency contact available anytime']
+        },
+        laundry: {
+            icon: '👕', title: 'Washing Machine', subtitle: 'Laundry',
+            desc: 'In-house washing machine facilities available for all residents. Keep your clothes fresh without the hassle of manual washing or expensive laundry services.',
+            highlights: ['Semi-automatic washing machine access', 'Drying space available on terrace', 'No extra charges for usage', 'Detergent to be arranged by resident', 'Scheduled slots to avoid overcrowding', 'Iron available on request']
+        },
+        fridge: {
+            icon: '🧊', title: 'Fridge & Water Dispenser', subtitle: 'Kitchen Essentials',
+            desc: 'Every floor has a refrigerator for storing your personal food items, plus a hot & cold water dispenser so you never have to boil water.',
+            highlights: ['Refrigerator on every floor', 'Hot & cold water dispenser on each floor', 'Store personal food, fruits & beverages', 'Purified RO water system', 'Available 24/7 — no time restrictions', 'Maintained and cleaned regularly']
+        },
+        cooking: {
+            icon: '🔥', title: 'Self-Cooking Gas', subtitle: 'Kitchen',
+            desc: 'Feel like cooking your own meal? We provide a shared gas stove facility so you can prepare anything you want on your schedule.',
+            highlights: ['Shared gas stove available', 'Basic utensils provided', 'Cook your own meals whenever you want', 'Great for weekend cooking sessions', 'Separate from main kitchen', 'Clean and well-maintained space']
+        },
+        water: {
+            icon: '🚿', title: 'Hot & Cold Water', subtitle: 'Daily Essentials',
+            desc: 'Never worry about hot water availability. Our geyser and plumbing system ensures 24/7 hot and cold water supply to every bathroom.',
+            highlights: ['Instant hot water — no waiting', 'Geyser in every bathroom', 'Cold water supply 24/7', 'Water tank with backup storage', 'No water shortage even in summer', 'Proper drainage and plumbing maintenance']
+        },
+        power: {
+            icon: '⚡', title: 'Power Backup', subtitle: 'Utilities',
+            desc: 'Uninterrupted power supply ensures your work and comfort are never disrupted. Our backup system kicks in within seconds of any outage.',
+            highlights: ['Automatic power backup system', 'Kicks in within seconds of outage', 'Covers lights, fans & charging points', 'Zero downtime for your WFH setup', 'UPS maintained regularly', 'Electricity included in rent']
+        },
+        parking: {
+            icon: '🏍️', title: '2-Wheeler Parking', subtitle: 'Parking',
+            desc: 'Secure covered parking space for your two-wheeler. The parking area is monitored by CCTV for added security.',
+            highlights: ['Covered parking area', 'CCTV monitored for security', 'Space for bikes and scooters', 'Well-lit parking zone', 'No extra parking charges', 'Easy access from building entrance']
+        },
+        cleaning: {
+            icon: '🧹', title: 'Daily Cleaning', subtitle: 'Housekeeping',
+            desc: 'Professional housekeeping staff cleans your room and all common areas every single day. Come back to a spotless room after work.',
+            highlights: ['Room swept and mopped daily', 'Bathroom cleaning every day', 'Common areas maintained throughout the day', 'Dustbin cleared daily', 'Bed linen change weekly', 'Deep cleaning done periodically']
+        },
+        elevator: {
+            icon: '🛗', title: 'Elevator Access', subtitle: 'Building Feature',
+            desc: 'A modern elevator with access to all floors — a rare luxury in Hinjawadi PGs. No more climbing stairs after a tiring day at work.',
+            highlights: ['Modern elevator — smooth & quiet', 'Access to all floors', 'Rare in Hinjawadi PG segment', 'Well-maintained with regular service', 'Emergency alarm inside', 'Spacious enough for luggage']
+        },
+        community: {
+            icon: '🏠', title: 'Homely Community Vibe', subtitle: 'Lifestyle',
+            desc: 'More than just a PG — it\'s a community of working professionals who share meals, conversations, and good vibes. Feel at home from day one.',
+            highlights: ['Residents are IT professionals — easy to connect', 'Common areas for socializing', 'Friendly and approachable owner', 'Festival celebrations together', 'Quiet hours respected by all', 'A place that genuinely feels like home']
+        }
+    };
+
+    const amenitySheet = document.getElementById('amenitySheet');
+
+    function openAmenitySheet(key) {
+        const d = amenityData[key];
+        if (!d) return;
+        document.getElementById('asIcon').textContent = d.icon;
+        document.getElementById('asTitle').textContent = d.title;
+        document.getElementById('asSubtitle').textContent = d.subtitle;
+        document.getElementById('asDesc').textContent = d.desc;
+        const ul = document.getElementById('asHighlights');
+        ul.innerHTML = d.highlights.map(h => `<li>${h}</li>`).join('');
+        glassBackdrop.classList.add('active');
+        amenitySheet.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeAmenitySheet() {
+        amenitySheet.classList.remove('active');
+        glassBackdrop.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    document.querySelectorAll('.amenity[data-amenity]').forEach(card => {
+        card.addEventListener('click', () => openAmenitySheet(card.dataset.amenity));
+    });
+
+    // ── ROOM QUICK-VIEW OVERLAY ──
+    const roomData = [
+        {
+            type: 'Double Sharing', tagline: 'Perfect for those who enjoy company',
+            price: '₹8,000', period: '/month', badge: 'Value Pick',
+            img: 'photos/room1.webp',
+            features: ['Shared room for two residents', 'All amenities included', '3 home-cooked meals per day', 'WiFi, cleaning & power backup', 'Hot & cold water 24/7', 'Elevator access to all floors', 'CCTV secured building', '30-day lock-in period'],
+            wa: 'Hi, I\'d like to book a Double Sharing room at ₹8,000/month'
+        },
+        {
+            type: 'Single Occupancy', tagline: 'Maximum privacy, maximum comfort',
+            price: '₹14,000', period: '/month', badge: 'Most Popular',
+            img: 'photos/room.webp',
+            features: ['Private room — all yours', 'All amenities included', '3 home-cooked meals per day', 'WiFi, cleaning & power backup', 'Hot & cold water 24/7', 'Elevator access to all floors', 'CCTV secured building', '30-day lock-in period'],
+            wa: 'Hi, I\'d like to book a Single Occupancy room at ₹14,000/month'
+        }
+    ];
+
+    const roomOverlay = document.getElementById('roomOverlay');
+
+    function openRoomOverlay(index) {
+        const d = roomData[index];
+        if (!d) return;
+        document.getElementById('roImg').src = d.img;
+        document.getElementById('roImg').alt = d.type + ' Room';
+        document.getElementById('roBadge').textContent = d.badge;
+        document.getElementById('roType').textContent = d.type;
+        document.getElementById('roTagline').textContent = d.tagline;
+        document.getElementById('roPrice').innerHTML = d.price + '<span class="period">' + d.period + '</span>';
+        document.getElementById('roFeatures').innerHTML = d.features.map(f => `<li>${f}</li>`).join('');
+        roomOverlay.querySelector('.room-overlay-wa').href = 'https://wa.me/917875668666?text=' + encodeURIComponent(d.wa);
+        glassBackdrop.classList.add('active');
+        roomOverlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeRoomOverlay() {
+        roomOverlay.classList.remove('active');
+        glassBackdrop.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    document.querySelectorAll('.room-card').forEach((card, i) => {
+        card.addEventListener('click', (e) => {
+            if (e.target.closest('.room-cta')) { e.preventDefault(); }
+            openRoomOverlay(i);
+        });
+    });
+
+    // Close overlays on backdrop click
+    glassBackdrop.addEventListener('click', () => {
+        closeAmenitySheet();
+        closeRoomOverlay();
+    });
+
+    // Close overlays on Escape
+    document.addEventListener('keydown', e => {
+        if (e.key === 'Escape') {
+            if (amenitySheet.classList.contains('active')) closeAmenitySheet();
+            if (roomOverlay.classList.contains('active')) closeRoomOverlay();
+        }
+    });
+
+    // Room overlay backdrop click
+    roomOverlay.addEventListener('click', e => {
+        if (e.target === roomOverlay) closeRoomOverlay();
+    });
+
+    // ── LIGHTBOX COUNTER & CAPTION ──
+    const galleryCaptions = [
+        'Spacious Room Interior', 'Marble-Clad Corridor', 'Modern Elevator',
+        'Furnished Room View', 'Cozy Room Setup', 'Quality Furniture',
+        'Elevator Lobby', 'Clean Washroom'
+    ];
+
+    const lbCounter = document.getElementById('lightboxCounter');
+    const lbCaption = document.getElementById('lightboxCaption');
+
+    // Patch existing openLightbox & navLightbox to update counter/caption
+    const _origOpen = openLightbox;
+    openLightbox = function(index) {
+        _origOpen(index);
+        lbCounter.textContent = (index + 1) + ' / ' + galleryImages.length;
+        lbCaption.textContent = galleryCaptions[index] || '';
+    };
+
+    const _origNav = navLightbox;
+    navLightbox = function(dir) {
+        _origNav(dir);
+        lbCounter.textContent = (currentLightbox + 1) + ' / ' + galleryImages.length;
+        lbCaption.textContent = galleryCaptions[currentLightbox] || '';
+    };
+
+    // ── COMPANY BADGE TOOLTIPS ──
+    let activeBadge = null;
+    document.querySelectorAll('.company-badge[data-dist]').forEach(badge => {
+        badge.addEventListener('click', (e) => {
+            e.stopPropagation();
+            if (activeBadge && activeBadge !== badge) {
+                activeBadge.classList.remove('show-tip');
+            }
+            badge.classList.toggle('show-tip');
+            activeBadge = badge.classList.contains('show-tip') ? badge : null;
+        });
+        // Desktop hover
+        badge.addEventListener('mouseenter', () => badge.classList.add('show-tip'));
+        badge.addEventListener('mouseleave', () => {
+            badge.classList.remove('show-tip');
+            if (activeBadge === badge) activeBadge = null;
+        });
+    });
+    document.addEventListener('click', () => {
+        if (activeBadge) { activeBadge.classList.remove('show-tip'); activeBadge = null; }
+    });
+
+    // ── SWIPE-TO-DISMISS for sheets ──
+    (function() {
+        let startY = 0, currentY = 0, dragging = false;
+        const sheet = document.getElementById('amenitySheet');
+        const handle = sheet.querySelector('.amenity-sheet-handle');
+
+        handle.addEventListener('touchstart', e => {
+            startY = e.touches[0].clientY;
+            dragging = true;
+            sheet.style.transition = 'none';
+        }, { passive: true });
+
+        sheet.addEventListener('touchmove', e => {
+            if (!dragging) return;
+            currentY = e.touches[0].clientY;
+            const diff = currentY - startY;
+            if (diff > 0) sheet.style.transform = sheet.style.transform.replace(/translateY\([^)]*\)/, '') + `translateY(${diff}px)`;
+        }, { passive: true });
+
+        sheet.addEventListener('touchend', () => {
+            if (!dragging) return;
+            dragging = false;
+            sheet.style.transition = '';
+            const diff = currentY - startY;
+            if (diff > 80) closeAmenitySheet();
+            else sheet.style.transform = '';
+        }, { passive: true });
+    })();
+
+    // Room overlay swipe-to-dismiss
+    (function() {
+        let startY = 0, currentY = 0, dragging = false;
+        const card = document.querySelector('.room-overlay-card');
+        const handle = card.querySelector('.room-overlay-handle');
+
+        handle.addEventListener('touchstart', e => {
+            startY = e.touches[0].clientY;
+            dragging = true;
+            card.style.transition = 'none';
+        }, { passive: true });
+
+        card.addEventListener('touchmove', e => {
+            if (!dragging) return;
+            currentY = e.touches[0].clientY;
+            const diff = currentY - startY;
+            if (diff > 0) card.style.transform = `translateY(${diff}px)`;
+        }, { passive: true });
+
+        card.addEventListener('touchend', () => {
+            if (!dragging) return;
+            dragging = false;
+            card.style.transition = '';
+            const diff = currentY - startY;
+            if (diff > 100) closeRoomOverlay();
+            else card.style.transform = '';
+        }, { passive: true });
+    })();
 </script>
 
 </body>
